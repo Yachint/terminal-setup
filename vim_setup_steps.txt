@@ -3,7 +3,8 @@ Apart from .vimrc:
 2. Coc for completion with these plugins:
 	2.1 :CocInstall coc-clangd
 	2.2 :CocInstall coc-pairs
-	2.3 :CocInstall coc-rome
+	2.3 :CocInstall coc-tsserver
 3. Also copied default Coc config to .vimrc
+
 
 NOTE: For mac, using custom application MacVim that basically opens vi default screen but with plugins we have made it so that it saves the session automatically as we close and loads it like Sublime.
