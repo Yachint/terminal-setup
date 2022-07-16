@@ -77,6 +77,7 @@ xmap <C-\> <Plug>(Multiterm)
 
 call plug#begin()
 
+Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -97,6 +98,16 @@ call plug#end()
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
 " unicode characters in the file autoload/float.vim
 set encoding=utf-8
+1
+3 3
+1 2 2
+1 3 4
+1
+1
+3 3
+1 2 2
+1 3 4
+1
 
 " TextEdit might fail if hidden is not set.
 set hidden
