@@ -11,8 +11,9 @@ set number
 " ----------------------------------------------------------------
 
 " Show line numbers in NerdTree
-:let g:NERDTreeShowLineNumbers=1
-:autocmd BufEnter NERD_* setlocal rnu
+" :let g:NERDTreeShowLineNumbers=1
+" :autocmd BufEnter Fern_* setlocal rnu
+" let g:fern#renderer = "nerdfont"
 
 " Exit terminal mode with ESC
 :tnoremap <Esc> <C-\><C-n>
@@ -75,15 +76,21 @@ imap <C-\> <Plug>(Multiterm)
 xmap <C-\> <Plug>(Multiterm)
 " --------------------------------------------------------------
 
+" set encoding=UTF-8
+
 call plug#begin()
 
+" Plug 'lambdalisue/fern-renderer-nerdfont.vim'
+" Plug 'lambdalisue/nerdfont.vim'
+Plug 'lambdalisue/fern-hijack.vim'
+Plug 'antoinemadec/FixCursorHold.nvim'
+Plug 'lambdalisue/fern.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'xolox/vim-session'
 Plug 'xolox/vim-misc'
-Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 if exists(':terminal')
     if has('nvim-0.4.0') || has('patch-8.2.191')
