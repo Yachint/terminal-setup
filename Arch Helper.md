@@ -14,7 +14,68 @@ sudo pacman -S lightdm lightdm-webkit2-greeter
 
 After that we basically need to create a desktop entry that would start dwm when we login. The catch is that like .xinitrc, we need to launch various other programs like nitrogen and picom before launching dwm. For that we will give the executable as a script rather thaj just 'dwm'.
 
-***It is very important to chmod +x both the desktop entry and the script to make it so that LightDM can execute them after we login with our user since by default only root user can do it***
+---
+***It is very important to chmod +x both the desktop entry and the script to make it so that LightDM can execute them after we login with our user since by default only root user can do it*** 
+
+---
+
+### I. Creating the XSession entry for DWM 
+Firstly we will go to the directory which stores the entry's for XSessions that the Display Manager can read. If this directory is not available go ahead and create it.
+
+```
+cd /usr/share/xsessions
+```
+Next up is creating the actual entry:
+
+```
+sudo vim dwm-session.desktop
+```
+
+Contents:
+```
+[Desktop Entry]
+Encoding=UTF-8
+Name=dwm
+Comment=Dynamic window manager
+Path=/usr/local/bin/dwm-session.sh
+Exec=/usr/local/bin/dwm-session.sh
+TryExec=/usr/local/bin/dwm-session.sh
+Icon=dwm
+Type=XSession
+```
+Now make it executable by LightDM in the context of our user:
+```
+sudo chmod +x dwm-session.desktop
+```
+
+### II. Creating custom startup script for DWM & its dependencies
+As we saw in the previous step, we pointed to a file called "dwm-session.sh". We will create that file now.
+
+Go to the directory:
+```
+cd /usr/local/bin
+```
+
+Create the script:
+```
+sudo vim dwm-session.sh
+```
+
+Contents:
+```
+#!/bin/bash
+/home/yachint/dwm-bar/dwm_bar.sh &
+setxkbmap us &
+picom -f &
+nitrogen --restore &
+exec dwm
+```
+
+Change the execution permissions here also:
+```
+sudo chmod +x dwm-session.sh
+```
+After doing this change, LightDM will automatically start the relevant programs like picom, nitrogen and dwm-bar before starting dwm, exactly like in .xinitrc just that with a Display manager we get proper login screen and ability to log back into the session after sleep/hibernation.
 
 ## Sound Setup (SU001)
 To enable sound we require these packages:
@@ -27,7 +88,6 @@ To enable sound we require these packages:
 ```
 sudo pacman -S alsa alsa-utils alsamixer pulseaudio pavucontrol
 ```
-
 
 ## Mouse Accelaration (MA002)
 Find your mouse in the list of input devices using:
