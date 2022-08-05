@@ -110,7 +110,7 @@ Find your mouse in the list of input devices using:
 xinput list
 ```
 
-Note down its ID and use the following command to decrease/increase speec (Range: -1 to 1):
+Note down its ID and use the following command to decrease/increase speed (Range: -1 to 1):
 ```
 xinput --set-prop 12 'libinput Accel Speed' -0.7
 ```
