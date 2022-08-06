@@ -135,6 +135,17 @@ To enable sound we require these packages:
 ```
 sudo pacman -S alsa alsa-utils alsamixer pulseaudio pavucontrol
 ```
+### Volume control scripts
+We can use custom scripts to control various aspects of sound like change default sink (playback-device), change volume on all apps etc. and that too dynamically using shell scripts linked to **pacmd**.
+
+- Alias based approach
+Can be used through terminal but is less modular as in only terminal where alias is defined can understand it.
+
+```
+<test>
+```
+
+- Script based approach
 
 ## Mouse Accelaration (MA002)
 Find your mouse in the list of input devices using:
