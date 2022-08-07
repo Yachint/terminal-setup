@@ -1,6 +1,11 @@
 # Artix-Arch Helper 
 Some tips on setting up certain features from a Clean/Base install. Instructions are given with ID like AB1234 to easily list if one process is dependent on the other and vice versa. Some instructions might be based on openrc init system. Please find suitable commands in runit, s6 or systemd to follow along.
 
+## Suspend with DWM not working
+This primarily happens due to not having a display manager installed due to which system does not know how to restart xserver which leads to the system not able to continue our dwm session.
+
+## Install fonts Manually 
+
 ## Add Arch repositories in Artix (RP101)
 By default, Artix only ships with a fixed number of repos like:
 - system
@@ -138,7 +143,10 @@ Reference:
 - https://askubuntu.com/questions/911692/crontab-xinput-returns-empty-results
 
 ## LightDM setup with DWM (LD312)
-***! This process is liked with [], please first carry out that to follow instructions here. !***
+***! 
+[IGNORE IF NOT ON ARTIX LINUX]
+This process is liked with instruction **RP101**, please first carry out that to follow instructions here. 
+!***
 
 The main components are:
 - lightdm
