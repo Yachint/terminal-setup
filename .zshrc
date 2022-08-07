@@ -113,3 +113,6 @@ alias vim="nvim"
 alias vi="nvim"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+alias 'vit'="nvim -c 'Fern . -drawer'"
+alias 'cpp'="nvim -c 'OpenSession cpp'"
