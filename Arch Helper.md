@@ -124,6 +124,32 @@ sudo chmod +x dwm-session.sh
 ### III. Add greeter session to Lightdm.conf
 In order for Lightdm to identify and use our installed greeter, we have to specifically tell it to use it in the config file.
 
+```
+cd /etc/lightdm/ 
+vim lightdm.conf 
+```
+
+Change the marked line as shown below
+```
+#xdmcp-manager=
+#xdmcp-port=177
+#xdmcp-key=
+greeter-session=lightdm-webkit2-greeter <=====
+#greeter-hide-users=false
+#greeter-allow-guest=true
+#greeter-show-manual-login=false
+#greeter-show-remote-login=true
+#user-session=default
+#allow-user-switching=true
+#allow-guest=true
+#guest-session=
+session-wrapper=/etc/lightdm/Xsession
+#greeter-wrapper=
+#guest-wrapper=
+display-setup-script=/etc/lightdm/display_setup.sh
+#display-stopped-script=
+```
+
 After doing this change, LightDM will automatically start the relevant programs like picom, nitrogen and dwm-bar before starting dwm, exactly like in .xinitrc just that with a Display manager we get proper login screen and ability to log back into the session after sleep/hibernation.
 
 ## Sound Setup (SU004)
