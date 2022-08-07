@@ -124,7 +124,7 @@ In order for Lightdm to identify and use our installed greeter, we have to speci
 
 After doing this change, LightDM will automatically start the relevant programs like picom, nitrogen and dwm-bar before starting dwm, exactly like in .xinitrc just that with a Display manager we get proper login screen and ability to log back into the session after sleep/hibernation.
 
-## Sound Setup (SU001)
+## Sound Setup (SU004)
 To enable sound we require these packages:
 - alsa
 - alsa-utils
@@ -142,10 +142,82 @@ We can use custom scripts to control various aspects of sound like change defaul
 Can be used through terminal but is less modular as in only terminal where alias is defined can understand it.
 
 ```
-<test>
+# Used to get list of active audio sinks/ sources based on their index
+pa-list() { pacmd list-sinks | awk '/index/ || /name:/' ;}
+
+# Once we run the previous command, we can get the index and 
+# pass it to pa-set() to change the sink to the index provided
+# for all the playback sources like Firefox, mpv etc.
+pa-set() { 
+	# list all apps in playback tab (ex: cmus, mplayer, vlc)
+	inputs=($(pacmd list-sink-inputs | awk '/index/ {print $2}')) 
+	# set the default output device
+	pacmd set-default-sink $1 &> /dev/null
+	# apply the changes to all running apps to use the new output device
+	for i in ${inputs[*]}; do pacmd move-sink-input $i $1 &> /dev/null; done
+}
+
+# To increase the volume of currently active sink
+pa-vol-inc() {
+	input=$(pacmd list-sinks | awk '$1 == "*" { print $3 }') 
+	pactl set-sink-volume $input +10%
+}
+
+# To decrease the volume of currently active sink
+pa-vol-dec() {
+	input=$(pacmd list-sinks | awk '$1 == "*" { print $3 }') 
+	pactl set-sink-volume $input -10%
+}
+
+# We can call all this functions by the below listed aliases
+alias vlist=pa-list
+alias vset=pa-set
+alias vinc=pa-vol-inc
+alias vdec=pa-vol-dec
 ```
 
 - Script based approach
+This approach is more modular as it can be linked to various keybinds like DWM keybind to easliy control volume and sources. Below I will list some example scripts which can be modified based on our requirements.
+
+
+**Switch audio to headphone**
+```
+#!/bin/sh
+
+# In the list of sinks, find the one which has 'usb' in its name
+# and get its index. Once that is done, other code is similar to
+# the alias method mentioned above where we switch all audio sources 
+# as well as the default sink to that index.
+headphone_id=$(pacmd list-sinks | awk '/index/ || /name:/' | awk '/index/{u=$0}/usb/{print u}' | grep -oP ":\s+\K\w+") 
+
+# list all apps in playback tab (ex: cmus, mplayer, vlc)
+inputs=($(pacmd list-sink-inputs | awk '/index/ {print $2}'))
+
+# set the default output device
+pacmd set-default-sink $headphone_id &> /dev/null
+	
+# apply the changes to all running apps to use the new output device
+for i in ${inputs[*]}; do pacmd move-sink-input $i $headphone_id &> /dev/null; done
+
+```
+---
+
+**Switch audio to Speaker**
+```
+#!/bin/sh
+
+# search for in-built sound card with "pci"
+speaker_id=$(pacmd list-sinks | awk '/index/ || /name:/' | awk '/index/{u=$0}/pci/{print u}' | grep -oP ":\s+\K\w+") 
+
+# list all apps in playback tab (ex: cmus, mplayer, vlc)
+inputs=($(pacmd list-sink-inputs | awk '/index/ {print $2}'))
+
+# set the default output device
+pacmd set-default-sink $speaker_id &> /dev/null
+	
+# apply the changes to all running apps to use the new output device
+for i in ${inputs[*]}; do pacmd move-sink-input $i $speaker_id &> /dev/null; done
+```
 
 ## Mouse Accelaration (MA002)
 Find your mouse in the list of input devices using:
