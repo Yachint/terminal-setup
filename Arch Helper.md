@@ -1,6 +1,65 @@
 # Artix-Arch Helper 
 Some tips on setting up certain features from a Clean/Base install. Instructions are given with ID like AB1234 to easily list if one process is dependent on the other and vice versa. Some instructions might be based on openrc init system. Please find suitable commands in runit, s6 or systemd to follow along.
 
+## Add Arch repositories in Artix (RP101)
+By default, Artix only ships with a fixed number of repos like:
+- system
+- world 
+- galaxy
+
+To add other community made packages like LightDM greeters, we need to add other repos which are maintained by Arch like:
+- extra
+- community
+- multilib
+- universe
+
+To add them, we first need to install the Arch linux support package:
+```
+pacman -Syu artix-archlinux-support
+```
+
+Then, we need to edit the pacman.conf file:
+```
+nvim /etc/pacman.conf
+```
+
+And add these lines (these lines are also printed after installation of arch linux support package):
+
+```
++ #[testing]
++ #Include = /etc/pacman.d/mirrorlist-arch
++ 
++ 
++ [extra]
++ Include = /etc/pacman.d/mirrorlist-arch
++ 
++ 
++ #[community-testing]
++ #Include = /etc/pacman.d/mirrorlist-arch
++ 
++ 
++ [community]
++ Include = /etc/pacman.d/mirrorlist-arch
++ 
++ 
++ #[multilib-testing]
++ #Include = /etc/pacman.d/mirrorlist-arch
++ 
++ 
++ #[multilib]
++ #Include = /etc/pacman.d/mirrorlist-arch
+```
+
+After that, write and come back to the terminal to run this command which will populate the trusted keys for these repos in our trust db:
+
+```
+pacman-key --populate archlinux
+```
+
+References:
+- https://dev.to/nabbisen/artix-linux-add-arch-linux-repos-extra-community-35ab
+- https://wiki.artixlinux.org/Main/Repositories#Universe
+
 ## Nvidia screen tearing fix (NV700)
 This is caused due to vsync not being enabled by default on both the compositor (picom in my case) and on driver level. It is more efficient to enable through driver level than through a compositor. We can run the below mentioned command to enable it:
 
