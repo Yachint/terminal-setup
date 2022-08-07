@@ -1,6 +1,18 @@
 # Artix-Arch Helper 
 Some tips on setting up certain features from a Clean/Base install. Instructions are given with ID like AB1234 to easily list if one process is dependent on the other and vice versa. Some instructions might be based on openrc init system. Please find suitable commands in runit, s6 or systemd to follow along.
 
+## Nvidia screen tearing fix (NV700)
+This is caused due to vsync not being enabled by default on both the compositor (picom in my case) and on driver level. It is more efficient to enable through driver level than through a compositor. We can run the below mentioned command to enable it:
+
+```
+nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }"
+```
+
+NOTE: This will reset on startup so will have to include in a script that runs on startup. Check the instruction for **LD312** for more info.
+
+References:
+- https://www.reddit.com/r/archlinux/comments/858q6h/nvidia_screen_tearing/
+
 ## Cannot edit crontab since "/bin/sh: /usr/bin/vi: No such file or directory" (CE002)
 
 This happens since the editor is not defined properly for sudo/ root operations. Solution is mentioned below.
@@ -15,6 +27,7 @@ Defaults env_keep += "EDITOR"
 
 Reference:
 - https://stackoverflow.com/a/64166227
+- https://wiki.gentoo.org/wiki/Cron#Installation
 
 ## Terminal/Vim Color helper links (CL001)
 In order to precisely set color in terminal/vim, we can either set colors with name like 'DarkBlue' or to be more precise, we can use the color chart which consists of various numbers that can be used.
@@ -60,11 +73,12 @@ sudo rc-update add syslog-ng default
 sudo rc-service syslog-ng start
 ```
 
-Reference: 
+Reference:
+- https://forum.artixlinux.org/index.php/topic,4380.0.html
 - https://wiki.gentoo.org/wiki/Syslog-ng
 - https://askubuntu.com/questions/911692/crontab-xinput-returns-empty-results
 
-## LightDM setup with DWM
+## LightDM setup with DWM (LD312)
 ***! This process is liked with [], please first carry out that to follow instructions here. !***
 
 The main components are:
@@ -135,11 +149,16 @@ xinput --set-prop 12 'libinput Accel Speed' -0.7 &
 nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }" &
 exec dwm
 ```
+NOTE: For nvidia based command check instruction **NV700** and for xinput based command check **MA002**.
 
 Change the execution permissions here also:
 ```
 sudo chmod +x dwm-session.sh
 ```
+
+References:
+- https://www.reddit.com/r/linux4noobs/comments/rw2s5s/comment/hr96zx2/
+- https://www.reddit.com/r/suckless/comments/jj61py/how_do_i_make_dwm_appear_on_my_display_manager/
 
 ### III. Add greeter session to Lightdm.conf
 In order for Lightdm to identify and use our installed greeter, we have to specifically tell it to use it in the config file.
