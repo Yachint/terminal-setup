@@ -111,6 +111,8 @@ Contents:
 setxkbmap us &
 picom -f &
 nitrogen --restore &
+xinput --set-prop 12 'libinput Accel Speed' -0.7 &
+nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }" &
 exec dwm
 ```
 
