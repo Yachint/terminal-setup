@@ -1,0 +1,12 @@
+To open file in expolre -> "gx"
+To split verically -> ":vsp <filename>"
+To exchange windows -> "Ctrl + W + X"
+To change split size -> "ex: 30% -> 30 + Ctrl + W + |"
+To switch between splits -> "Ctrl + W + W"
+To yank all -> ":%y+"
+To delete all -> ":%d"
+To wrap selected text with quotes -> 'S"'
+To comment a line -> "gcc"
+To delete contents inside a bracket -> "di}"
+To replace a word under cursor -> "ciw"
+To find and replace -> "%s/int/ll/g"
