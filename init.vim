@@ -1,4 +1,8 @@
 set number
+nnoremap <C-a> ggVG
+vnoremap <C-c> "*y
+nnoremap <C-v> "*p
+" lua require('init')
 " BATTLING COC vs VIM for snippet!--------------------------------
 " For disabling default keybind of moving through function snippet
 " ONLY FIX -> .zshrc -> add line -> bindkey -r <quote>^J<end-quote>
@@ -8,6 +12,20 @@ set number
 
 " For moving single charater to left in INSERT mode
 " Helps in quickly completing line by semi-colon
+" ----------------------------------------------------------------
+
+" Coc-Suggestions color scheme change ----------------------------
+""" Customize colors
+func! s:my_colors_setup() abort
+    " this is an example
+    hi Pmenu guibg='Blue' ctermfg='White' ctermbg=17 gui=NONE
+    hi CocMenuSel guibg='Blue' ctermbg='Brown' gui=NONE
+    hi CocSearch ctermfg=220
+endfunc
+
+augroup colorscheme_coc_setup | au!
+    au ColorScheme * call s:my_colors_setup()
+augroup END
 " ----------------------------------------------------------------
 
 " Show line numbers in NerdTree
@@ -80,6 +98,8 @@ xmap <C-\> <Plug>(Multiterm)
 
 call plug#begin()
 
+" Plug 'nvim-treesitter/playground'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 " Plug 'lambdalisue/nerdfont.vim'
 Plug 'lambdalisue/fern-hijack.vim'
@@ -99,6 +119,28 @@ if exists(':terminal')
 endif
 
 call plug#end()
+
+
+" Lua config for treesitter
+lua << EOF
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
+    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+    -- Using this option may slow down your editor, and you may see some duplicate highlights.
+    -- Instead of true it can also be a list of languages
+    additional_vim_regex_highlighting = false,
+  },
+}
+
+vim.cmd[[hi TSVariable guifg=#fcba03 ctermfg=LightBlue]]
+vim.cmd[[hi TSFunction guifg=#fcba03 ctermfg=LightCyan]]
+vim.cmd[[hi TSKeyword guifg=#fcba03 ctermfg=DarkMagenta]]
+vim.cmd[[hi TSMethod guifg=#fcba03 ctermfg=Yellow]]
+vim.cmd[[hi TSProperty guifg=#fcba03 ctermfg=LightRed]]
+vim.cmd[[hi TSConstructor guifg=#fcba03 ctermfg=Green]]
+EOF
 
 " COC Config from here onwards...
 
@@ -145,16 +187,12 @@ endif
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ CheckBackspace() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-function! CheckBackspace() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1):
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
 " Use <c-space> to trigger completion.
 if has('nvim')
@@ -165,8 +203,14 @@ endif
 
 " Make <CR> auto-select the first completion item and notify coc.nvim to
 " format on enter, <cr> could be remapped by other vim plugin
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
@@ -278,3 +322,4 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
