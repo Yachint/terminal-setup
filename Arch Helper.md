@@ -1,10 +1,36 @@
 # Artix-Arch Helper 
 Some tips on setting up certain features from a Clean/Base install. Instructions are given with ID like AB1234 to easily list if one process is dependent on the other and vice versa. Some instructions might be based on openrc init system. Please find suitable commands in runit, s6 or systemd to follow along.
 
-## Suspend with DWM not working
-This primarily happens due to not having a display manager installed due to which system does not know how to restart xserver which leads to the system not able to continue our dwm session.
+## Suspend with DWM not working (SU111)
+This primarily happens due to not having a display manager (Login Manager is a more appropriate term) installed due to which system does not know how to restart xserver which leads to the system not able to continue our dwm session.
 
-## Install fonts Manually 
+Simple solution is to install a login/display manager like LightDM. Steps for LightDM install are mentioned at **LD312**
+
+References:
+- https://forum.artixlinux.org/index.php/topic,1662.0.html
+
+## Install fonts Manually (FN004)
+Fonts have to be manually installed if you don't have a desktop env. already set up and have created your system by base install.
+
+- Download and unpack your fonts in some folder
+- Create the folder shown below if not already there and move all the fonts there:
+```
+mkdir ~/.local/share/fonts
+mv ttf/Hack-Regular.ttf ~/.local/share/fonts/Hack-Regular.ttf
+```
+
+- Then clear and regenerate your Font cache:
+```
+fc-cache -f -v
+```
+- To test if font has been installed and to also get the name by which it has installed:
+```
+fc-list | grep "Hack"
+```
+
+References:
+- https://medium.com/source-words/how-to-manually-install-update-and-uninstall-fonts-on-linux-a8d09a3853b0
+
 
 ## Add Arch repositories in Artix (RP101)
 By default, Artix only ships with a fixed number of repos like:
