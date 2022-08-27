@@ -3,6 +3,13 @@ Some tips on setting up certain features from a Clean/Base install. Instructions
 
 OpenRC cheatsheet for Systemd commnads: https://wiki.gentoo.org/wiki/OpenRC_to_systemd_Cheatsheet
 
+## Support other language fonts in browsers (FN001)
+By default, the font enabled by base install only supports english and few other major languages. To support other languages like Hindi, Japanese, Korean etc, we need to install 2 font families that cover almost all the languages available out there.
+
+```
+pacman -S noto-fonts noto-fonts-cjk
+```
+
 ## Suspend with DWM not working (SU111)
 This primarily happens due to not having a display manager (Login Manager is a more appropriate term) installed due to which system does not know how to restart xserver which leads to the system not able to continue our dwm session.
 
