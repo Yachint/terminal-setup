@@ -3,6 +3,45 @@ Some tips on setting up certain features from a Clean/Base install. Instructions
 
 OpenRC cheatsheet for Systemd commnads: https://wiki.gentoo.org/wiki/OpenRC_to_systemd_Cheatsheet
 
+## Mount NTFS drives on kernel 5.16 and upwards (NT006)
+After 5.16 (not exactly sure when this change happened...), we have to manually add udev rule to allow us to mount the ntfs file systems to fix the error shown below:
+
+```
+mount: /mnt: unknown filesystem type 'ntfs'
+```
+
+Steps are as follows:
+
+1. Edit or create this file
+   ```
+   nvim /etc/udev/rules.d/ntfs3_by_default.rules
+   ```
+2. Add the lines shown below
+   ```
+   SUBSYSTEM=="block", ENV{ID_FS_TYPE}=="ntfs", ENV{ID_FS_TYPE}="ntfs3"
+   ```
+3. Reboot the system
+   ```
+   sudo reboot
+   ```
+4. Create a folder in /mnt (optional)
+   ```
+   sudo mkdir /mnt/ntfs1
+   ```
+5. Mount the disk (use lsblk to check the disk nomenclature)
+   ```
+   sudo mount -t ntfs3 /dev/sdc1 /mnt/ntfs1
+   ```
+6. Unmount after use (its not 'un-mount', its 'u-mount')
+   ```
+   sudo umount /mnt/ntfs1
+   ```
+
+References:
+- https://wiki.archlinux.org/title/NTFS
+- https://www.reddit.com/r/linuxquestions/comments/smubo1/ntfs_and_516_kernel/
+- https://phoenixnap.com/kb/mount-ntfs-linux
+
 ## Support other language fonts in browsers (FN001)
 By default, the font enabled by base install only supports english and few other major languages. To support other languages like Hindi, Japanese, Korean etc, we need to install 2 font families that cover almost all the languages available out there.
 
