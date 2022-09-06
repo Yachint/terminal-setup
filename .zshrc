@@ -116,3 +116,5 @@ alias vi="nvim"
 
 alias 'vit'="nvim -c 'Fern . -drawer'"
 alias 'cpp'="nvim -c 'OpenSession cpp'"
+
+# Latest 06 Sept 2022
