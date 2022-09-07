@@ -2,6 +2,8 @@ set number
 nnoremap <C-a> ggVG
 vnoremap <C-c> "*y
 nnoremap <C-v> "*p
+nnoremap <tab> <c-w>
+nnoremap <tab><tab> <c-w><c-w>
 " lua require('init')
 " BATTLING COC vs VIM for snippet!--------------------------------
 " For disabling default keybind of moving through function snippet
