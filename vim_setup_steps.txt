@@ -4,10 +4,14 @@ Apart from .vimrc:
 	2.1 :CocInstall coc-clangd
 	2.2 :CocInstall coc-pairs
 	2.3 :CocInstall coc-tsserver
+	2.4 :CocInstall coc-html
+	2.5 :CocInstall coc-css
 3. Nvim-tresitter after install:
 	3.1 :TSInstall cpp
 	3.2 :TSInstall javascript
 	3.3 :TSInstall typescript
+	3.4 :TSInstall html
+	3.5 :TSInstall css
 4. Also copied default Coc config to .vimrc
 
 
