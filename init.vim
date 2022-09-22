@@ -1,4 +1,6 @@
 set number
+" nnoremap zz :update<cr> :edit<cr> :echo '"'.@%.'"'.'- Written '.getfsize(expand(@%)).'B (*).'<cr>
+nnoremap zz :update<cr>
 nnoremap <C-a> ggVG
 vnoremap <C-c> "*y
 nnoremap <C-v> "*p
@@ -325,4 +327,4 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
-" Latest 6 Sept 2022
+" Latest 22 Sept 2022
