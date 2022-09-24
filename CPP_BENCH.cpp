@@ -8,8 +8,11 @@
 #define MOD 1000000007
 using namespace std;
 
+// Single Core results:
 // APPLE M1 (ARM) - 19 seconds
+// AMD RYZEN 2700 (4 GHz) - 34 seconds
 // AMPERE A1 OCI (ARM) - 36 seconds
+
 
 int main(){
 	int sz = 1000000000;
