@@ -347,7 +347,7 @@ sudo pacman -S alsa alsa-utils alsamixer pulseaudio pavucontrol
 We can use custom scripts to control various aspects of sound like change default sink (playback-device), change volume on all apps etc. and that too dynamically using shell scripts linked to **pacmd**.
 
 - Alias based approach
-Can be used through terminal but is less modular as in only terminal where alias is defined can understand it.
+Can be used through terminal but is less modular as only the terminal can use it where alias is defined.
 
 ```
 # Used to get list of active audio sinks/ sources based on their index
