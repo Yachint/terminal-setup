@@ -1,0 +1,418 @@
+    1  vim .zshrc
+    2  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+    3  vim .zshrc
+    4  paru
+    5  p10k configure
+    6  paru
+    7  ls /usr/share/font
+    8  ls /usr/share/
+    9  ls /usr/share/fonts
+   10  cd Downloads
+   11  ls
+   12  mv MesloLGS\ NF\ Regular.ttf meslo.ttf
+   13  ls
+   14  mv meslo.ttf /usr/share/fonts
+   15  sudo mv meslo.ttf /usr/share/fonts
+   16  ls /usr/share/fonts
+   17  cd ..
+   18  cd st
+   19  ls
+   20  vim config.def.h
+   21  fc-cache -f -v
+   22  ls /usr/share/fonts
+   23  fc-list
+   24  fc-list | grep meslo
+   25  vim config.def.h
+   26  cp config.def.h config.h
+   27  sudo cp config.def.h config.h
+   28  sudo make clean install
+   29  paru
+   30  cd st
+   31  vim config.def.h
+   32  sudo cp config.def.h config.h
+   33  sudo make clean install
+   34  vim config.def.h
+   35  paru
+   36  cd st
+   37  vim config.def.h
+   38  btop
+   39  neofetch
+   40  sudo poweroff
+   41  startx
+   42  p10k configure
+   43  paru
+   44  htop
+   45  neofetch
+   46  cd dwm
+   47  ls
+   48  vim config.def.h
+   49  btop
+   50  cd ..
+   51  cd st
+   52  vim config.def.h
+   53  sudo cp config.def.h config.h
+   54  sudo make clean install
+   55  startx
+   56  btop
+   57  neofetch
+   58  vim .xinitrc
+   59  startx
+   60  ls
+   61  cd dwm
+   62  ls
+   63  patch < dwm-fullgaps-6.2.diff
+   64  vi dwm.c.rej
+   65  vim dwm.c.rej
+   66  cd dwm
+   67  sudo cp config.def.h config.h
+   68  sudo make clean install
+   69  cd ..
+   70  cd st
+   71  ls
+   72  patch < st-alpha-20220206-0.8.5.diff
+   73  sudo cp config.def.h config.h
+   74  sudo make clean install
+   75  cd st
+   76  ls
+   77  vi config.def.h
+   78  vim config.def.h
+   79  sudo cp config.def.h config.h
+   80  sudo make clean install
+   81  neofetch
+   82  btop
+   83  neofetch
+   84  sudo pacman -S alsa-utils pamixer playerctl ttf-font-awesome
+   85  paru pamixer
+   86  paru cxxopts
+   87  paru pamixer
+   88  paru playerctl
+   89  sudo pacman -S alsa-utils ttf-font-awesome
+   90  amixer
+   91  pactl
+   92  pactl -h
+   93  paru xclip
+   94  cd dwm
+   95  vim config.def.h
+   96  sudo cp config.def.h config.h
+   97  sudo make clean install
+   98  neofetch
+   99  cd ..
+  100  git clone git://git.suckless.org/dwmstatus
+  101  cd dwmstatus
+  102  make
+  103  sudo make PREFIX=/usr install
+  104  cd ..
+  105  vim .xinitrc
+  106  sudo reboot
+  107  startx
+  108  cd dwm-s
+  109  cd dwmstatus
+  110  ls
+  111  vim dwmstatus
+  112  vim dwmstatus.c
+  113  cd ..
+  114  git clone https://github.com/joestandring/dwm-bar
+  115  cd dwm-bar
+  116  chmod +x dwm_bar.sh
+  117  cd ..
+  118  vim .xinitrc
+  119  cd dwm-bar
+  120  ls
+  121  cd bar-functions
+  122  ls
+  123  cd ..
+  124  vim dwm_bar.sh
+  125  cd bar-functions
+  126  ls
+  127  vim dwm_alsa.sh
+  128  vim dwm_connman.sh
+  129  pulse
+  130  alsa
+  131  vim dwm_pulse.sh
+  132  vim dwm_alsa.sh
+  133  amixer
+  134  cd ..
+  135  ls
+  136  vim dwm_bar.sh
+  137  sudo reboot
+  138  startx
+  139  vim .xinitrc
+  140  cd dwm-bar
+  141  ls
+  142  sh dwm_bar.sh
+  143  htop
+  144  vim dwm_bar.sh
+  145  sudo reboot
+  146  startx
+  147  cd dwm
+  148  ls
+  149  vim config.def.h
+  150  history | grep font
+  151  ls /usr/share/fonts
+  152  fc-list | grep "ttf"
+  153  fc-list | grep "Awesom"
+  154  cd dwm
+  155  vim config.def.h
+  156  sudo cp config.def.h config.h
+  157  sudo make clean install
+  158  vim config.def.h
+  159  sudo cp config.def.h config.h
+  160  sudo make clean install
+  161  fc-list | grep "ttf"
+  162  sudo cp config.def.h config.h
+  163  sudo make clean install
+  164  sudo cp config.def.h config.h
+  165  sudo make clean install
+  166  sudo suspend
+  167  sudo hibernate
+  168  cd ..
+  169  cd dwm-bar
+  170  ls
+  171  vim dwm_bar.sh
+  172  sudo reboot
+  173  startx
+  174  cd dwm
+  175  ls
+  176  vim config.def.h
+  177  amixer set Master 5%+
+  178  cat /sys/power/state
+  179  s2ram
+  180  loginctl
+  181  loginctl suspend
+  182  sudo loginctl suspend
+  183  startx
+  184  sudo loginctl hybrid-sleep
+  185  startx
+  186  ^[[200~cat /var/log/Xorg.n.log~
+  187  cat /var/log/Xorg.n.log
+  188  sudo loginctl suspend
+  189  vim .xinitrc
+  190  sudo loginctl suspend
+  191  startx
+  192  sudo pacman -S lightdm light-webkit2-greeter
+  193  sudo pacman -S lightdm lightdm-webkit2-greeter
+  194  sudo pacman -S lightdm
+  195  rs-update add lightdm default
+  196  rc-update add lightdm default
+  197  rc-update -v show
+  198  rc-update -v show | grep light
+  199  rc-update -v show | grep dm
+  200  sudo pacman -S lightdm-openrc
+  201  rc-update add lightdm default
+  202  sudo rc-update add lightdm default
+  203  sudo vim /etc/lightdm/lightdm.conf
+  204  sudo reboot
+  205  startx
+  206  sudo loginctl suspend
+  207  paru
+  208  sudo reboot
+  209  paru
+  210  paru lightdm-webkit2-greeter
+  211  paru lightdm
+  212  paru lightdm-webkit2-greeter
+  213  paru lightdm-greeter
+  214  paru lightdm-webkit2
+  215  startx
+  216  sudo pacman -S lightdm-webkit2-greeter
+  217  paru -S lightdm-webkit2-greeter
+  218  paru -S lightdm-webkit-theme-aether
+  219  paru -S lightdm-slick-greeter
+  220  pacman -Syy
+  221  sudo pacman -Syy
+  222  paru -S lightdm-slick-greeter
+  223  paru -S lightdm-deepin-greeter
+  224  paru -S lightdm-gtk-greeter
+  225  vim /etc/pacman.conf
+  226  sudo vim /etc/pacman.conf
+  227  paru -S lightdm-webkit-theme-aether
+  228  paru -S lightdm-deepin-greeter
+  229  sudo pacman -Syy
+  230  paru -S lightdm-webkit2-greeter
+  231  paru -S lightdm-deepin-greeter
+  232  sudo vim /etc/pacman.conf
+  233  pacman -Syu artix-archlinux-support
+  234  sudo pacman -Syu artix-archlinux-support
+  235  sudo vim /etc/pacman.conf
+  236  sudo pacman -Syy
+  237  sudo pacman -Syu artix-archlinux-support
+  238  sudo vim /etc/pacman.conf
+  239  pacman-key --populate archlinux
+  240  sudo pacman-key --populate archlinux
+  241  sudo pacman -Syy
+  242  paru -S lightdm-webkit2-greeter
+  243  sudo reboot
+  244  startx
+  245  sudo vim /etc/lightdm/lightdm.conf
+  246  sudo reboot
+  247  cd /usr/share
+  248  ls
+  249  mkdir xsessions
+  250  sudo mkdir xsessions
+  251  cd xsessions
+  252  vim dwm.desktop
+  253  startx
+  254  vim dwm.desktop
+  255  sudo vim dwm.desktop
+  256  ls -l
+  257  cd ~
+  258  sudo reboot
+  259  sudo loginctl suspend
+  260  sudo poweroff
+  261  cd /usr/share
+  262  cd xsessions
+  263  ls
+  264  ls -a
+  265  cd /usr/local
+  266  ls
+  267  cd bin
+  268  ;s
+  269  ls
+  270  cd ..
+  271  cd bin
+  272  ls -a
+  273  ls -l
+  274  sudo vim dwm-session
+  275  ls -l
+  276  vim dwm-session
+  277  ls
+  278  sudo vim dwm.desktop
+  279  sudo reboot
+  280  startx
+  281  cd dwm
+  282  ls
+  283  sudo make clean install
+  284  cd ..
+  285  cd /usr/local/bim
+  286  cd /usr/local/bin
+  287  ls -l
+  288  cd /usr/share/xsessions
+  289  sudo vim dwm.desktop
+  290  sudo reboot
+  291  startx
+  292  cd /usr/bin
+  293  ls
+  294  ls | grep dwm
+  295  cd /usr/local/bin
+  296  ls
+  297  sudo mv dwm-session dwm-session.sh
+  298  ls
+  299  sudo vim dwm-session.sh
+  300  cd ..
+  301  cd ~
+  302  cd /usr/share/xsessions
+  303  ls
+  304  sudo vim dwm.desktop
+  305  lightdm
+  306  sudo reboot
+  307  startx
+  308  cd /var/log/lightdm
+  309  ls
+  310  sudo ls
+  311  tail lightdm.l
+  312  tail lightdm.log
+  313  sudo tail lightdm.log
+  314  sudo vim lightdm.log
+  315  sudo vim seat0-greeter.log
+  316  sudo vim x-0.log
+  317  cd ..
+  318  ls
+  319  sudo vim Xorg.0.log
+  320  cd ..
+  321  cd /usr/share/xsessions
+  322  ls
+  323  cd ..
+  324  cd /usr/local/bin
+  325  ls
+  326  sudo vim dwm-session.sh
+  327  cd /usr/share/xsessions
+  328  ls
+  329  ls -a
+  330  sudo vim dwm.desktop
+  331  sudo mv dwm.desktop dwm-session.desktop
+  332  ls
+  333  cd /usr/local/bin
+  334  ls
+  335  ls -a
+  336  ls -l
+  337  chmod +x dwm-session.sh
+  338  sudo chmod +x dwm-session.sh
+  339  ls -l
+  340  cd /usr/local/bin
+  341  ls
+  342  sh dwm-session.sh
+  343  dwm
+  344  startx
+  345  dwm
+  346  cd ~
+  347  vim .xinitrc
+  348  ls
+  349  sudo vim dwm
+  350  sudo vim dwm-session.sh
+  351  sh dwm-session.sh
+  352  sudo reboot
+  353  startx
+  354  cd /usr/local/bin
+  355  ls
+  356  cd /usr/share/xsessions
+  357  ls
+  358  sudo vim dwm-session.desktop
+  359  ls -l
+  360  chmod +x dwm-session.desktop
+  361  sudo chmod +x dwm-session.desktop
+  362  ls -l
+  363  vim dwm-session.desktop
+  364  cd /usr/local/bin
+  365  ls
+  366  sudo vim dwm-session.sh
+  367  ls -l
+  368  sudo reboot
+  369  paru
+  370  neofetch
+  371  acman -S alsa alsa-utils
+  372  pacman -S alsa alsa-utils
+  373  sudo pacman -S alsa alsa-utils
+  374  alsamixer
+  375  amixer sset Master unmute
+  376  sudo pacman -S alsa-utils pulseaudio
+  377  alsamixer
+  378  pacmd list-sinks
+  379  sudo pacman -S pavucontrol
+  380  sudo loginctl suspend
+  381  cd /etc/lightdm
+  382  ls
+  383  sudo vim /etc/lightdm/display_setup.sh
+  384  sudo chmod +x /etc/lightdm/display_setup.sh
+  385  sudo vim /etc/lightdm/lightdm.conf
+  386  sudo vim /etc/modprobe.d/nvidia-drm-nomodeset.conf
+  387  cd ~
+  388  sudo mkinitcpio -P
+  389  sudo reboot
+  390  nvivia-smi
+  391  nvidia-smi
+  392  sudo loginctl suspend
+  393  htop
+  394  nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }\n
+  395  nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }"
+  396  xinput list
+  397  xinput list-prop 12
+  398  xinput set-prop 12 'libinput Accel Speed' -0.5
+  399  xinput list
+  400  xinput set-prop 13 'libinput Accel Speed' -0.5
+  401  xinput set-prop 10 'libinput Accel Speed' -0.5
+  402  xinput --set-prop 12 'libinput Accel Speed' -0.5
+  403  xinput --set-prop 4 'libinput Accel Speed' -0.5
+  404  xinput --set-prop 2 'libinput Accel Speed' -0.5
+  405  xinput set-prop 12 267 5.0
+  406  sudo reboot
+  407  xinput list
+  408  xinput list-props 2
+  409  xinput list-props 12
+  410  xinput set-prop 12 'libinput Accel Speed' -0.5
+  411  xinput list-props 12
+  412  xinput set-prop 12 'libinput Accel Speed' -1.5
+  413  xinput set-prop 12 'libinput Accel Speed' -0.5
+  414  xinput list-props 12
+  415  xinput --set-prop 12 'libinput Accel Speed' -0.6
+  416  xinput list-props 12
+  417  xinput --set-prop 12 'libinput Accel Speed' -1.0
+  418  xinput --set-prop 12 'libinput Accel Speed' -0.7

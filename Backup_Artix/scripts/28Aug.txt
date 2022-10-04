@@ -1,0 +1,1367 @@
+    1  vim .zshrc
+    2  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+    3  vim .zshrc
+    4  paru
+    5  p10k configure
+    6  paru
+    7  ls /usr/share/font
+    8  ls /usr/share/
+    9  ls /usr/share/fonts
+   10  cd Downloads
+   11  ls
+   12  mv MesloLGS\ NF\ Regular.ttf meslo.ttf
+   13  ls
+   14  mv meslo.ttf /usr/share/fonts
+   15  sudo mv meslo.ttf /usr/share/fonts
+   16  ls /usr/share/fonts
+   17  cd ..
+   18  cd st
+   19  ls
+   20  vim config.def.h
+   21  fc-cache -f -v
+   22  ls /usr/share/fonts
+   23  fc-list
+   24  fc-list | grep meslo
+   25  vim config.def.h
+   26  cp config.def.h config.h
+   27  sudo cp config.def.h config.h
+   28  sudo make clean install
+   29  paru
+   30  cd st
+   31  vim config.def.h
+   32  sudo cp config.def.h config.h
+   33  sudo make clean install
+   34  vim config.def.h
+   35  paru
+   36  cd st
+   37  vim config.def.h
+   38  btop
+   39  neofetch
+   40  sudo poweroff
+   41  startx
+   42  p10k configure
+   43  paru
+   44  htop
+   45  neofetch
+   46  cd dwm
+   47  ls
+   48  vim config.def.h
+   49  btop
+   50  cd ..
+   51  cd st
+   52  vim config.def.h
+   53  sudo cp config.def.h config.h
+   54  sudo make clean install
+   55  startx
+   56  btop
+   57  neofetch
+   58  vim .xinitrc
+   59  startx
+   60  ls
+   61  cd dwm
+   62  ls
+   63  patch < dwm-fullgaps-6.2.diff
+   64  vi dwm.c.rej
+   65  vim dwm.c.rej
+   66  cd dwm
+   67  sudo cp config.def.h config.h
+   68  sudo make clean install
+   69  cd ..
+   70  cd st
+   71  ls
+   72  patch < st-alpha-20220206-0.8.5.diff
+   73  sudo cp config.def.h config.h
+   74  sudo make clean install
+   75  cd st
+   76  ls
+   77  vi config.def.h
+   78  vim config.def.h
+   79  sudo cp config.def.h config.h
+   80  sudo make clean install
+   81  neofetch
+   82  btop
+   83  neofetch
+   84  sudo pacman -S alsa-utils pamixer playerctl ttf-font-awesome
+   85  paru pamixer
+   86  paru cxxopts
+   87  paru pamixer
+   88  paru playerctl
+   89  sudo pacman -S alsa-utils ttf-font-awesome
+   90  amixer
+   91  pactl
+   92  pactl -h
+   93  paru xclip
+   94  cd dwm
+   95  vim config.def.h
+   96  sudo cp config.def.h config.h
+   97  sudo make clean install
+   98  neofetch
+   99  cd ..
+  100  git clone git://git.suckless.org/dwmstatus
+  101  cd dwmstatus
+  102  make
+  103  sudo make PREFIX=/usr install
+  104  cd ..
+  105  vim .xinitrc
+  106  sudo reboot
+  107  startx
+  108  cd dwm-s
+  109  cd dwmstatus
+  110  ls
+  111  vim dwmstatus
+  112  vim dwmstatus.c
+  113  cd ..
+  114  git clone https://github.com/joestandring/dwm-bar
+  115  cd dwm-bar
+  116  chmod +x dwm_bar.sh
+  117  cd ..
+  118  vim .xinitrc
+  119  cd dwm-bar
+  120  ls
+  121  cd bar-functions
+  122  ls
+  123  cd ..
+  124  vim dwm_bar.sh
+  125  cd bar-functions
+  126  ls
+  127  vim dwm_alsa.sh
+  128  vim dwm_connman.sh
+  129  pulse
+  130  alsa
+  131  vim dwm_pulse.sh
+  132  vim dwm_alsa.sh
+  133  amixer
+  134  cd ..
+  135  ls
+  136  vim dwm_bar.sh
+  137  sudo reboot
+  138  startx
+  139  vim .xinitrc
+  140  cd dwm-bar
+  141  ls
+  142  sh dwm_bar.sh
+  143  htop
+  144  vim dwm_bar.sh
+  145  sudo reboot
+  146  startx
+  147  cd dwm
+  148  ls
+  149  vim config.def.h
+  150  history | grep font
+  151  ls /usr/share/fonts
+  152  fc-list | grep "ttf"
+  153  fc-list | grep "Awesom"
+  154  cd dwm
+  155  vim config.def.h
+  156  sudo cp config.def.h config.h
+  157  sudo make clean install
+  158  vim config.def.h
+  159  sudo cp config.def.h config.h
+  160  sudo make clean install
+  161  fc-list | grep "ttf"
+  162  sudo cp config.def.h config.h
+  163  sudo make clean install
+  164  sudo cp config.def.h config.h
+  165  sudo make clean install
+  166  sudo suspend
+  167  sudo hibernate
+  168  cd ..
+  169  cd dwm-bar
+  170  ls
+  171  vim dwm_bar.sh
+  172  sudo reboot
+  173  startx
+  174  cd dwm
+  175  ls
+  176  vim config.def.h
+  177  amixer set Master 5%+
+  178  cat /sys/power/state
+  179  s2ram
+  180  loginctl
+  181  loginctl suspend
+  182  sudo loginctl suspend
+  183  startx
+  184  sudo loginctl hybrid-sleep
+  185  startx
+  186  ^[[200~cat /var/log/Xorg.n.log~
+  187  cat /var/log/Xorg.n.log
+  188  sudo loginctl suspend
+  189  vim .xinitrc
+  190  sudo loginctl suspend
+  191  startx
+  192  sudo pacman -S lightdm light-webkit2-greeter
+  193  sudo pacman -S lightdm lightdm-webkit2-greeter
+  194  sudo pacman -S lightdm
+  195  rs-update add lightdm default
+  196  rc-update add lightdm default
+  197  rc-update -v show
+  198  rc-update -v show | grep light
+  199  rc-update -v show | grep dm
+  200  sudo pacman -S lightdm-openrc
+  201  rc-update add lightdm default
+  202  sudo rc-update add lightdm default
+  203  sudo vim /etc/lightdm/lightdm.conf
+  204  sudo reboot
+  205  startx
+  206  sudo loginctl suspend
+  207  paru
+  208  sudo reboot
+  209  paru
+  210  paru lightdm-webkit2-greeter
+  211  paru lightdm
+  212  paru lightdm-webkit2-greeter
+  213  paru lightdm-greeter
+  214  paru lightdm-webkit2
+  215  startx
+  216  sudo pacman -S lightdm-webkit2-greeter
+  217  paru -S lightdm-webkit2-greeter
+  218  paru -S lightdm-webkit-theme-aether
+  219  paru -S lightdm-slick-greeter
+  220  pacman -Syy
+  221  sudo pacman -Syy
+  222  paru -S lightdm-slick-greeter
+  223  paru -S lightdm-deepin-greeter
+  224  paru -S lightdm-gtk-greeter
+  225  vim /etc/pacman.conf
+  226  sudo vim /etc/pacman.conf
+  227  paru -S lightdm-webkit-theme-aether
+  228  paru -S lightdm-deepin-greeter
+  229  sudo pacman -Syy
+  230  paru -S lightdm-webkit2-greeter
+  231  paru -S lightdm-deepin-greeter
+  232  sudo vim /etc/pacman.conf
+  233  pacman -Syu artix-archlinux-support
+  234  sudo pacman -Syu artix-archlinux-support
+  235  sudo vim /etc/pacman.conf
+  236  sudo pacman -Syy
+  237  sudo pacman -Syu artix-archlinux-support
+  238  sudo vim /etc/pacman.conf
+  239  pacman-key --populate archlinux
+  240  sudo pacman-key --populate archlinux
+  241  sudo pacman -Syy
+  242  paru -S lightdm-webkit2-greeter
+  243  sudo reboot
+  244  startx
+  245  sudo vim /etc/lightdm/lightdm.conf
+  246  sudo reboot
+  247  cd /usr/share
+  248  ls
+  249  mkdir xsessions
+  250  sudo mkdir xsessions
+  251  cd xsessions
+  252  vim dwm.desktop
+  253  startx
+  254  vim dwm.desktop
+  255  sudo vim dwm.desktop
+  256  ls -l
+  257  cd ~
+  258  sudo reboot
+  259  sudo loginctl suspend
+  260  sudo poweroff
+  261  cd /usr/share
+  262  cd xsessions
+  263  ls
+  264  ls -a
+  265  cd /usr/local
+  266  ls
+  267  cd bin
+  268  ;s
+  269  ls
+  270  cd ..
+  271  cd bin
+  272  ls -a
+  273  ls -l
+  274  sudo vim dwm-session
+  275  ls -l
+  276  vim dwm-session
+  277  ls
+  278  sudo vim dwm.desktop
+  279  sudo reboot
+  280  startx
+  281  cd dwm
+  282  ls
+  283  sudo make clean install
+  284  cd ..
+  285  cd /usr/local/bim
+  286  cd /usr/local/bin
+  287  ls -l
+  288  cd /usr/share/xsessions
+  289  sudo vim dwm.desktop
+  290  sudo reboot
+  291  startx
+  292  cd /usr/bin
+  293  ls
+  294  ls | grep dwm
+  295  cd /usr/local/bin
+  296  ls
+  297  sudo mv dwm-session dwm-session.sh
+  298  ls
+  299  sudo vim dwm-session.sh
+  300  cd ..
+  301  cd ~
+  302  cd /usr/share/xsessions
+  303  ls
+  304  sudo vim dwm.desktop
+  305  lightdm
+  306  sudo reboot
+  307  startx
+  308  cd /var/log/lightdm
+  309  ls
+  310  sudo ls
+  311  tail lightdm.l
+  312  tail lightdm.log
+  313  sudo tail lightdm.log
+  314  sudo vim lightdm.log
+  315  sudo vim seat0-greeter.log
+  316  sudo vim x-0.log
+  317  cd ..
+  318  ls
+  319  sudo vim Xorg.0.log
+  320  cd ..
+  321  cd /usr/share/xsessions
+  322  ls
+  323  cd ..
+  324  cd /usr/local/bin
+  325  ls
+  326  sudo vim dwm-session.sh
+  327  cd /usr/share/xsessions
+  328  ls
+  329  ls -a
+  330  sudo vim dwm.desktop
+  331  sudo mv dwm.desktop dwm-session.desktop
+  332  ls
+  333  cd /usr/local/bin
+  334  ls
+  335  ls -a
+  336  ls -l
+  337  chmod +x dwm-session.sh
+  338  sudo chmod +x dwm-session.sh
+  339  ls -l
+  340  cd /usr/local/bin
+  341  ls
+  342  sh dwm-session.sh
+  343  dwm
+  344  startx
+  345  dwm
+  346  cd ~
+  347  vim .xinitrc
+  348  ls
+  349  sudo vim dwm
+  350  sudo vim dwm-session.sh
+  351  sh dwm-session.sh
+  352  sudo reboot
+  353  startx
+  354  cd /usr/local/bin
+  355  ls
+  356  cd /usr/share/xsessions
+  357  ls
+  358  sudo vim dwm-session.desktop
+  359  ls -l
+  360  chmod +x dwm-session.desktop
+  361  sudo chmod +x dwm-session.desktop
+  362  ls -l
+  363  vim dwm-session.desktop
+  364  cd /usr/local/bin
+  365  ls
+  366  sudo vim dwm-session.sh
+  367  ls -l
+  368  sudo reboot
+  369  paru
+  370  neofetch
+  371  acman -S alsa alsa-utils
+  372  pacman -S alsa alsa-utils
+  373  sudo pacman -S alsa alsa-utils
+  374  alsamixer
+  375  amixer sset Master unmute
+  376  sudo pacman -S alsa-utils pulseaudio
+  377  alsamixer
+  378  pacmd list-sinks
+  379  sudo pacman -S pavucontrol
+  380  sudo loginctl suspend
+  381  cd /etc/lightdm
+  382  ls
+  383  sudo vim /etc/lightdm/display_setup.sh
+  384  sudo chmod +x /etc/lightdm/display_setup.sh
+  385  sudo vim /etc/lightdm/lightdm.conf
+  386  sudo vim /etc/modprobe.d/nvidia-drm-nomodeset.conf
+  387  cd ~
+  388  sudo mkinitcpio -P
+  389  sudo reboot
+  390  nvivia-smi
+  391  nvidia-smi
+  392  sudo loginctl suspend
+  393  htop
+  394  nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }\n
+  395  nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }"
+  396  xinput list
+  397  xinput list-prop 12
+  398  xinput set-prop 12 'libinput Accel Speed' -0.5
+  399  xinput list
+  400  xinput set-prop 13 'libinput Accel Speed' -0.5
+  401  xinput set-prop 10 'libinput Accel Speed' -0.5
+  402  xinput --set-prop 12 'libinput Accel Speed' -0.5
+  403  xinput --set-prop 4 'libinput Accel Speed' -0.5
+  404  xinput --set-prop 2 'libinput Accel Speed' -0.5
+  405  xinput set-prop 12 267 5.0
+  406  sudo reboot
+  407  xinput list
+  408  xinput list-props 2
+  409  xinput list-props 12
+  410  xinput set-prop 12 'libinput Accel Speed' -0.5
+  411  xinput list-props 12
+  412  xinput set-prop 12 'libinput Accel Speed' -1.5
+  413  xinput set-prop 12 'libinput Accel Speed' -0.5
+  414  xinput list-props 12
+  415  xinput --set-prop 12 'libinput Accel Speed' -0.6
+  416  xinput list-props 12
+  417  xinput --set-prop 12 'libinput Accel Speed' -1.0
+  418  xinput --set-prop 12 'libinput Accel Speed' -0.7
+  419  history > aug08.txt
+  420  vim aug08.txt
+  421  sudo poweroff
+  422  xinput list-props 12
+  423  xinput --set-prop 12 'libinput Accel Speed' -0.7
+  424  ls
+  425  grep Xsession aug08.txt
+  426  grep session aug08.txt
+  427  grep -i Xsession aug08.txt
+  428  cat /usr/share/xsessions/dwm-session.desktop
+  429  ls -l /usr/share/xsessions/dwm-session.desktop
+  430  grep -i local aug08.txt
+  431  grep -i .sh aug08.txt
+  432  grep -i sudo vim aug08.txt
+  433  grep -i sudo vim dwm aug08.txt
+  434  grep -i sudo vim dwm-session.sh aug08.txt
+  435  cat /usr/local/bin/dwm-session.sh
+  436  /usr/sbin
+  437  ls
+  438  ls | grep suspend
+  439  ls | grep hybrid
+  440  sudo loginctl suspend
+  441  pactl -- set-sink-volume 0 +10%
+  442  pactl -- set-sink-volume 0 -10%
+  443  ls
+  444  cd dwm-bar
+  445  ls
+  446  sudo vim dwm_bar.sh
+  447  cd bar-functions
+  448  ls
+  449  sudo vim dwm_pulse.sh
+  450  cd ..
+  451  ls
+  452  vim dwm_bar.sh
+  453  sudo crontab -e
+  454  sudo vim crontab -e
+  455  ps aux | grep vron
+  456  ps aux | grep cron
+  457  cd dwm
+  458  vim config.def.h
+  459  pactl set-sink-volume 0 +10%
+  460  pactl set-sink-volume 0 -10%
+  461  pactl set-sink-volume 0 +10%
+  462  pactl set-sink-volume 0 -10%
+  463  grep config.h aug08.txt
+  464  sudo cp config.def.h config.h
+  465  sudo make clean install
+  466  xev
+  467  vim config.def.h
+  468  xev
+  469  sudo cp config.def.h config.h
+  470  sudo make clean install
+  471  sudo reboot
+  472  sudo crontab -e
+  473  sudo vim crontab -e
+  474  xinput list-prop 12
+  475  xinput 12 list-prop 
+  476  history | grep xinput
+  477  xinput list-props 12
+  478  rc-status
+  479  cd /var/log
+  480  ls
+  481  crontab -e
+  482  sudo crontab -e
+  483  sudo reboot
+  484  paru
+  485  pactl set-sink-volume 0 -10%
+  486  xev
+  487  cd /var/log
+  488  ls
+  489  ps ax | grep cron
+  490  paru cron
+  491  paru cron | grep openrc
+  492  paru cron | grep installed
+  493  paru -Q
+  494  paru -Q | grep cron
+  495  cd ~
+  496  sudo vim .zshrc
+  497  pactl set-sink-volume 0 -10%
+  498  paru nvim
+  499  nvim
+  500  pacman -S nvim
+  501  sudo pacman -S nvim
+  502  sudo pacman -S neovim
+  503  sudo pacman -S xsel
+  504  nvim
+  505  vim .zshrc
+  506  echo $EDITOR
+  507  vim .zshrc
+  508  echo $EDITOR
+  509  sudo crontab -e
+  510  crontab -l
+  511  sudo crontab -l
+  512  sudo crontab -u root -e
+  513  sudo su
+  514  history | grep xinput
+  515  sudo crontab -u root -e
+  516  sudo visudo
+  517  $EDITOR=nvim visudo
+  518  sudo $EDITOR=nvim visudo
+  519  sudo EDITOR=nvim visudo
+  520  sudo crontab -u root -e
+  521  history | grep xinput
+  522  sudo reboot
+  523  ls /var/log/
+  524  sudo crontab -l
+  525  sudo crontab -e
+  526  ls /var/log/
+  527  cd /var/l
+  528  cd /var/log
+  529  ;s
+  530  ls
+  531  tail rc.log
+  532  tail dmseg
+  533  tail dmesg
+  534  sudo tail dmesg
+  535  sudo grep cron  dmesg
+  536  cd audit
+  537  sudo cd audit
+  538  ls
+  539  ps ax | grep cron
+  540  cd /etc
+  541  ls
+  542  cat cron.deny
+  543  sudo cat cron.deny
+  544  crontab -l
+  545  sudo crontab -l
+  546  sudo crontab -e
+  547  ls
+  548  sudo crontab -l
+  549  ls
+  550  sudo crontab -e
+  551  cat crontest.txt
+  552  sudo crontab -e
+  553  cd ~
+  554  cd dwm
+  555  vi config.def.h
+  556  grep cp aug08.txt
+  557  sudo cp config.def.h config.h
+  558  sudo make clean install
+  559  vi config.def.h
+  560  btop
+  561  sudo reboot
+  562  sudo crontab -e
+  563  xinput list-props 12
+  564  ls
+  565  sudo crontab -e
+  566  xinput list
+  567  ls
+  568  cat crontest.txt
+  569  clear
+  570  ls
+  571  sudo crontab -e
+  572  ls
+  573  sudo crontab -e
+  574  crontab -e
+  575  crontab -l
+  576  ls
+  577  cat cronieTest.txt
+  578  clear
+  579  cat cronieTest.txt
+  580  crontab -e
+  581  pacman -q
+  582  pacman -Q
+  583  crontab -e
+  584  cat cronieTest.txt
+  585  crontab -e
+  586  ls
+  587  rm crontest.txt
+  588  rm cronieTest.txt
+  589  ls
+  590  sudo rm cronieTest.txt
+  591  ls
+  592  l
+  593  sls
+  594  ls
+  595  crontab -l
+  596  ls
+  597  cat pacCron.txt
+  598  clear
+  599  xinput list
+  600  crontab -l
+  601  crontab -e
+  602  crontab -l
+  603  ls
+  604  sudo rm pacCron.txt
+  605  ls
+  606  sudo rm pacCron.txt
+  607  ls
+  608  cat pacn.txt
+  609  which shell
+  610  exho $SHELL
+  611  echo $SHELL
+  612  vi .zshrc
+  613  echo $SHELL
+  614  source ~/.zshrc
+  615  cat pacn.txt
+  616  crontab -e
+  617  cat pacn.txt
+  618  sudo crontab -e
+  619  cat pacn.txt
+  620  crontab -l
+  621  cat pacn.txt
+  622  vi .zshrc
+  623  cat .Xauthority
+  624  crontab -e
+  625  cat pacn.txt
+  626  crontab -e
+  627  cat pacn.txt
+  628  vi mouse.sh
+  629  ls
+  630  sh mouse.sh
+  631  ls
+  632  cat output.txt
+  633  vi mouse.sh
+  634  crontab -e
+  635  crontab -l
+  636  lsl
+  637  ls
+  638  sudo rm output.txt
+  639  ls
+  640  cat mouse.sh
+  641  ls
+  642  sudo poweroff
+  643  ls
+  644  sudo crontab -l
+  645  crontab -l
+  646  cat mouse.sh
+  647  ls
+  648  crontab -e
+  649  crontab -l
+  650  ls
+  651  cd dwm
+  652  vi config.def.h
+  653  vi dwm.c
+  654  ls
+  655  sh mouse.sh
+  656  ls
+  657  cat cronOut.txt
+  658  sudo rm cronOut.txt
+  659  crontab -e
+  660  crontab -l
+  661  ls
+  662  cat cronO
+  663  cat cronOut.txt
+  664  crontab -e
+  665  cd ~
+  666  grep xinput aug08.txt
+  667  ls -a
+  668  ls -l
+  669  chmod +x mouse.sh
+  670  ls -l
+  671  vim mouse.sh
+  672  xinput list-props 12
+  673  crontab -e
+  674  cd /var/log
+  675  ls
+  676  find / -name *cron
+  677  find / -name cron
+  678  find / -name crond
+  679  find / -name crond | grep crond
+  680  grep patch aug08.txt
+  681  cd ~
+  682  cd st
+  683  ls
+  684  patch < st-scrollback-0.8.5.diff
+  685  grep cp aug08.txt
+  686  sudo cp config.def.h config.h
+  687  sudo make clean install
+  688  patch < st-scrollback-reflow-0.8.5.diff
+  689  sudo make clean install
+  690  sudo cp config.def.h config.h
+  691  sudo make clean install
+  692  patch < st-scrollback-mouse-20220127-2c5edf2.diff
+  693  sudo cp config.def.h config.h
+  694  sudo make clean install
+  695  sudo reboot
+  696  find / -name crond | grep crond
+  697  find / -name crond.log
+  698  find / -name crond.log > cronLocations
+  699  ls
+  700  vim cronLocations
+  701  find / -name crond.log >> cronLocations
+  702  vim cronLocations
+  703  sudo loginctl suspend
+  704  xinput list-props 12
+  705  sh mouse.sh
+  706  find / -name crond.log
+  707  find /var/ -name crond.log
+  708  find /var/ -name cron
+  709  find /var/ -name crond
+  710  cd /var/log/
+  711  ls
+  712  cd audit
+  713  usdo cd audit
+  714  sudo cd audit
+  715  sudo ls audit
+  716  sudo ls cups
+  717  cd.etc
+  718  cd /etc
+  719  ls
+  720  cd cron.d
+  721  ls
+  722  cat 0hourly
+  723  cd ..
+  724  cd cron.daily
+  725  ls
+  726  cd ..
+  727  cd /var/log
+  728  ls
+  729  tail dmesg
+  730  usdo tail dmesg
+  731  sudo tail dmesg
+  732  sudo grep cron dmesg
+  733  cd /etc/init.d
+  734  ls
+  735  sudo cat cronie
+  736  sudo vim cronie
+  737  sudo cat cronie
+  738  sudo reboot
+  739  xinput list-props 12
+  740  crontab -l
+  741  xinput list-props 12
+  742  cd /var/log
+  743  ls
+  744  cat crond.log
+  745  sudo cat crond.log
+  746  xinput list-props 12
+  747  sudo cat crond.log
+  748  cd /etc/init.d
+  749  ls
+  750  sudo vim cronie
+  751  cat /var/log/crond.log
+  752  sudo cat /var/log/crond.log
+  753  sudo vim cronie
+  754  crontab -l
+  755  xinput list-props 12
+  756  pacman -Rsc cronie cronie-openrc
+  757  xinput list-props 12
+  758  sudo pacman -Rsc cronie cronie-openrc
+  759  rc-status show
+  760  rc-status
+  761  paru -S dcron dcron-openrc
+  762  paru -S dcron
+  763  rc-update -v show
+  764  rc-update -v show | grep cron
+  765  sudo pacman -Rsc dcron
+  766  paru -S fcron-openrc
+  767  paru -S fcron fcron-openrc
+  768  rc-update -v show | grep cron
+  769  grep add aug08.txt
+  770  sudo rc-update add fcron default
+  771  crontab -l
+  772  fcrontab -l
+  773  fcrontab -e
+  774  rc-service fcron start
+  775  sudo rc-service fcron start
+  776  fcrontab -e
+  777  xinput list-props 12
+  778  grep xinput aug08.txt
+  779  xinput --set-prop 12 'libinput Accel Speed' 0.0
+  780  xinput list-props 12
+  781  cd /var/log
+  782  ls
+  783  sudo cat crond.log
+  784  fcrontab -e
+  785  fcrontabs
+  786  fcrontab -z
+  787  cd /etc
+  788  ls
+  789  cd fcron
+  790  ls
+  791  cat fcron.conf
+  792  sudo cat fcron.conf
+  793  cd /var/spool
+  794  ls
+  795  cd cron
+  796  ls
+  797  sudo cat yachint
+  798  cd ..
+  799  cd anacron
+  800  ls
+  801  cd ..
+  802  paru -S dcron-openrc
+  803  paru -S vixie-cron-openrc
+  804  paru -Rcs fcron fcron-openrc
+  805  paru -Rcs cronie cronie-openrc
+  806  paru -S cronie cronie-openrc
+  807  sudo rc-update add crond default
+  808  sudo rc-update add cron default
+  809  rc-update -v show | grep cron
+  810  sudo rc-update add cronie default
+  811  sudo rc-service cronie start
+  812  crontab -l
+  813  cd ..
+  814  ls
+  815  cd log
+  816  ls
+  817  cat crond.log
+  818  sudo cat crond.log
+  819  sudo rm crond.log
+  820  ls
+  821  sudo reboot
+  822  cd /var/log
+  823  ls
+  824  tail pacman.log 
+  825  crontab l
+  826  crontab -l
+  827  xinput list-props 12
+  828  pacman -S vixie
+  829  sudo paru vixie
+  830  xinput list-props 12
+  831  pacman -Rsc cronie cronie-openrc
+  832  sudo pacman -Rsc cronie cronie-openrc
+  833  sudo paru vixie
+  834  paru vixie
+  835  rc-update -v show | grep cron
+  836  sudo pacman -Rsc vixie-cron
+  837  paru bcron
+  838  paru dcron
+  839  ls
+  840  cat dmesg
+  841  sud ocat dmesg
+  842  sudo cat dmesg
+  843  sudo cat dmesg | grep cron
+  844  sudo cat dmesg | grep fcron
+  845  ls
+  846  sudo cat rc.log
+  847  ls
+  848  sudo cat wtmp
+  849  clear
+  850  cd ..
+  851  cd ~
+  852  sudo pacman -S cronie cronie-openrc
+  853  rc-service status
+  854  sudo rc-update add cronie default
+  855  sudo rc-service cronie start
+  856  crontab -l
+  857  cd /etc
+  858  ls
+  859  history | grep vim
+  860  history | grep cronie
+  861  history | grep 734
+  862  history | grep 733
+  863  cd ..
+  864  cd //
+  865  cd ..
+  866  cd /etc/init
+  867  cd /etc/init.d/
+  868  ls
+  869  sudo vim cronie
+  870  cd /var/log
+  871  ls
+  872  sudo reboot
+  873  cd /var/log
+  874  ls
+  875  sudo cat cronie.err
+  876  sudo cat cronie.log
+  877  history | grep xinit
+  878  xinit list-props 12
+  879  cd ~
+  880  xinit list-props 12
+  881  xinput list-props 12
+  882  crontab -l
+  883  crontab -e
+  884  sudo cat /var/log/cronie.log
+  885  sudo cat /var/log/cronie.err
+  886  xinput list-props 12
+  887  sudo cat /var/log/cronie.log
+  888  sudo cat /var/log/cronie.err
+  889  sudo /var/log
+  890  ls
+  891  cd /var/log/
+  892  ls
+  893  sudo rm cronie.err
+  894  sudo rm cronie.log
+  895  cd /etc/init.d
+  896  sudo vim cronie
+  897  cd /var/log/
+  898  ls
+  899  crontab -e
+  900  rc-service cronie stop
+  901  sudo rc-service cronie stop
+  902  sudo rc-service cronie start
+  903  ls
+  904  sudo cat cronie.log
+  905  sudo cat cronie.err
+  906  sudo cat cronie.log
+  907  sudo rm cronie.log
+  908  sudo rm cronie.err
+  909  ls
+  910  sudo vim cronie
+  911  sudo rc-service cronie stop
+  912  sudo rc-service cronie start
+  913  sudo cat dmesg
+  914  sudo vim dmesg
+  915  sudo cat dmesg
+  916  paru cronie-runit
+  917  ls
+  918  rc-service show
+  919  rc-service 
+  920  rc-status
+  921  ls -a
+  922  sudo tail rc.log
+  923  cd old
+  924  ls
+  925  cd ..
+  926  cd audit
+  927  sudo cd audit
+  928  sudo cd audit -s
+  929  sudo cd -s audit -s
+  930  sudo cd -s audit
+  931  cd /usr/sbin/
+  932  ls
+  933  ls | grep syslog
+  934  paru syslog
+  935  paru -S syslog-ng syslog-ng-openrc
+  936  rc-update -v show
+  937  rc-update add syslog-ng default
+  938  sudo rc-update add syslog-ng default
+  939  sudo rc-service syslog-ng start
+  940  cd /var/log/
+  941  ls
+  942  cat syslog.log
+  943  sudo cat syslog.log
+  944  crontab -e
+  945  sudo cat syslog.log
+  946  ls
+  947  cat crond.log
+  948  sudo cat crond.log
+  949  crontab -e
+  950  sudo cat crond.log
+  951  sudo reboot
+  952  xinput list-props 12
+  953  cat /var/log/crond.log
+  954  sudo cat /var/log/crond.log
+  955  sudo loginctl suspend
+  956  sh mouse.sh
+  957  sudo reboot
+  958  paru ncpamixer
+  959  ncpamixer
+  960  paru -Rcs ncpamixer
+  961  ncpamixer
+  962  paacmd list-sinks
+  963  pacmd list-sinks
+  964  cd dwm
+  965  vi config.def.h
+  966  pactl list short sinks
+  967  pacmd set-default-sink 0
+  968  pacmd set-default-sink 1
+  969  pacmd set-default-sink 0
+  970  paru cider
+  971  btop
+  972  htop
+  973  vi .zshrc
+  974  source ~/.zshrc
+  975  vi .zshrc
+  976  source ~/.zshrc
+  977  vlist
+  978  source ~/.zshrc
+  979  vi .zshrc
+  980  source ~/.zshrc
+  981  vi .zshrc
+  982  source ~/.zshrc
+  983  vlist
+  984  vset 1
+  985  vlist
+  986  vset 0
+  987  vset 1
+  988  vset 0
+  989  vset 1
+  990  pactl set-default-sink-volume 0 +10%
+  991  vi .zshrc
+  992  pacmd list-sinks | awk '/index/ || /name:/'
+  993  pacmd list-sinks | awk '/index/'
+  994  pacmd list-sinks | awk '/*/'
+  995  vset 0
+  996  pacmd list-sinks | awk '$1 == "*" { print $2 }'
+  997  pacmd list-sinks | awk '$1 == "*" { print $3 }'
+  998  vset 1
+  999  pacmd list-sinks | awk '$1 == "*" { print $3 }'
+ 1000  vset 0
+ 1001  pacmd list-sinks | awk '$1 == "*" { print $3 }'
+ 1002  vi .zshrc
+ 1003  source ~/.zshrc
+ 1004  vinc
+ 1005  vi .zshrc
+ 1006  source ~/.zshrc
+ 1007  vinc
+ 1008  vi .zshrc
+ 1009  source ~/.zshrc
+ 1010  vinc
+ 1011  vdec
+ 1012  vi .zshrc
+ 1013  source ~/.zshrc
+ 1014  vinc
+ 1015  vdec
+ 1016  vset 1
+ 1017  vdec
+ 1018  vinc
+ 1019  vdec
+ 1020  vinc
+ 1021  vdec
+ 1022  vinc
+ 1023  btop
+ 1024  sudo poweroff
+ 1025  cd dwm
+ 1026  vi config.
+ 1027  vi config.def.h
+ 1028  vinc
+ 1029  vdec
+ 1030  grep cp aug08.txt
+ 1031  sudo cp config.def.h config.h
+ 1032  sudo make clean install
+ 1033  sudo reboot
+ 1034  vinc
+ 1035  vdec
+ 1036  cd dwm 
+ 1037  vi config.h
+ 1038  cd .
+ 1039  cd ..
+ 1040  vim volUp.sh
+ 1041  vi .zshrc
+ 1042  chmod +x volUp.sh
+ 1043  sh volUp.sh
+ 1044  vim volUp.sh
+ 1045  sh volUp.sh
+ 1046  vim volUp.sh
+ 1047  sh volUp.sh
+ 1048  vim volUp.sh
+ 1049  sh volUp.sh
+ 1050  vim volUp.sh
+ 1051  sh volUp.sh
+ 1052  vdec
+ 1053  sh volUp.sh
+ 1054  cd dwm
+ 1055  vi config.d
+ 1056  vi config.def.h
+ 1057  ./volUp.sh
+ 1058  vdec
+ 1059  ./volUp.sh
+ 1060  vdec
+ 1061  sudo cp config.def.h config.h
+ 1062  sudo make clean install
+ 1063  sudo reboot
+ 1064  vdec
+ 1065  ls
+ 1066  vi volUp.sh
+ 1067  vi volDown.sh
+ 1068  ./volDown.sh
+ 1069  chmod +x volDown.sh
+ 1070  ./volDown.sh
+ 1071  vi .zshrc
+ 1072  vi volToHeadphone.sh
+ 1073  vlist
+ 1074  pacmd list-sink-inputs
+ 1075  pacmd list-sinks
+ 1076  pacmd list-sinks | more
+ 1077  pacmd list-sinks | awk '/index/ || /name:/'
+ 1078  pacmd list-sinks | awk '/USB/'
+ 1079  pacmd list-sinks | awk '/index/ || /name:<alsa_output.usb/'
+ 1080  pacmd list-sinks | awk '/name:<alsa_output.usb/'
+ 1081  pacmd list-sinks | awk '/index/'
+ 1082  pacmd list-sinks | awk '/index/ || /USB/'
+ 1083  pacmd list-sinks | awk '/USB/ || /index/'
+ 1084  pacmd list-sinks | awk '/USB/ && /index/'
+ 1085  pacmd list-sinks | awk '/index/ || /name:<alsa_output.usb/'
+ 1086  pacmd list-sinks | awk '/index/ && /name:<alsa_output.usb/'
+ 1087  pacmd list-sinks | awk '/index/ & /name:<alsa_output.usb/'
+ 1088  pacmd list-sinks | awk '/index/ && /name:<alsa_output.usb/'
+ 1089  pacmd list-sinks | awk '/index/' | awk '/name:<alsa_output.usb'
+ 1090  pacmd list-sinks | awk '/index/' | awk '/name:<alsa_output.usb/'
+ 1091  pacmd list-sinks | awk '/index/'
+ 1092  pacmd list-sinks | awk '/index/ || /name:/' | awk '/name:<alsa_output.usb/'
+ 1093  pacmd list-sinks | awk '/index/ || /name:/'
+ 1094  pacmd list-sinks | awk '/index/ || /name:/' | grep usb
+ 1095  pacmd list-sinks | awk '/index/ || /name:/' | awk '/USB/'
+ 1096  pacmd list-sinks | awk '/index/ || /name:/' | awk '/USB/ {a=$0}'
+ 1097  pacmd list-sinks | awk '/index/ || /name:/' | awk '/USB/{if (a && a !~ /foo/) print a; print} {a=$0}'
+ 1098  pacmd list-sinks | awk '/index/ || /name:/' | awk '/USB/{if (a && a !~ /foo/) print a;} {a=$0}'
+ 1099  pacmd list-sinks | awk '/index/ || /name:/' | awk '/USB/{if (a && a !~ /USB/) print a;} {a=$0}'
+ 1100  pacmd list-sinks | awk '/index/ || /name:/' | awk '/index/{u=$0}/USB/{print $0; print u}'
+ 1101  pacmd list-sinks | awk '/index/ || /name:/' | awk '/index/{u=$0}/USB/{print u}'
+ 1102  pacmd list-sinks | awk '/index/ || /name:/' | awk '/index/{u=$0}/pci/{print u}'
+ 1103  pacmd list-sinks | awk '/index/ || /name:/' | awk '/index/{u=$0}/pci/{print u} { print $3 }'
+ 1104  pacmd list-sinks | awk '/index/ || /name:/' | awk '/index/{u=$0}/usb/{print u} { print $3 }'
+ 1105  pacmd list-sinks | awk '/index/ || /name:/' | awk '/index/{u=$0}/usb/{print $3}'
+ 1106  pacmd list-sinks | awk '/index/ || /name:/' | awk '/index/{u=$0}/usb/{print $u}'
+ 1107  pacmd list-sinks | awk '/index/ || /name:/' | awk '/index/{u=$0}/pci/{print u}'
+ 1108  pacmd list-sinks | awk '/index/{u=$0}/pci/{print u}'
+ 1109  pacmd list-sinks | awk '/index/ || /name:/' | awk '/index/{u=$0}/pci/{print u}'
+ 1110  pacmd list-sinks | awk '/index/ || /name:/' | awk '/index/{u=$0}/pci/{print u}' | grep -oP ":\s+\K\w+"
+ 1111  pacmd list-sinks | awk '/index/ || /name:/' | awk '/index/{u=$0}/usb/{print u}' | grep -oP ":\s+\K\w+"
+ 1112  ls
+ 1113  chmod +x volToHeadphone.sh
+ 1114  ls
+ 1115  vi volToHeadphone.sh
+ 1116  vi volDown.sh
+ 1117  vlist
+ 1118  vset 2
+ 1119  vset 1
+ 1120  vlist
+ 1121  vset 2
+ 1122  vset 0
+ 1123  vset 1
+ 1124  sh volToHeadphone.sh
+ 1125  vlist
+ 1126  vset 1
+ 1127  sh volToHeadphone.sh
+ 1128  vset 1
+ 1129  sh volToHeadphone.sh
+ 1130  vi volToHeadphone.sh
+ 1131  vi volToSpeaker.sh
+ 1132  chmod +x volToSpeaker.sh
+ 1133  vinc
+ 1134  vdex
+ 1135  vdec
+ 1136  vi volToSpeaker.sh
+ 1137  sh volToSpeaker.sh
+ 1138  sh volToHeadphone.sh
+ 1139  sh volToSpeaker.sh
+ 1140  sh volToHeadphone.sh
+ 1141  sh volToSpeaker.sh
+ 1142  cd dwm
+ 1143  vi config.def.h
+ 1144  xev
+ 1145  ls
+ 1146  sudo loginctl suspend
+ 1147  sudo cp config.def.h config.h
+ 1148  sudo make clean install
+ 1149  sudo reboot
+ 1150  neofetch
+ 1151  sudo reboot
+ 1152  neofetch
+ 1153  btop
+ 1154  paru discord
+ 1155  paru
+ 1156  paru discord
+ 1157  paru discord | more
+ 1158  paru discord
+ 1159  paru
+ 1160  ps ax | grep pacman
+ 1161  paru
+ 1162  m /var/lib/pacman/db.lck
+ 1163  sudo rm /var/lib/pacman/db.lck
+ 1164  paru
+ 1165  paru discord
+ 1166  sudo loginctl suspend
+ 1167  btop
+ 1168  nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }"
+ 1169  sh mouse.sh
+ 1170  vi volToSpeaker.sh
+ 1171  :q
+ 1172  quit
+ 1173  vi .zshrc
+ 1174  pacman -Rcs xsel
+ 1175  sudo pacman -Rcs xsel
+ 1176  sudo pacman -S xclip
+ 1177  vi .zshrc
+ 1178  pacman -Rcs xclip
+ 1179  sudo pacman -Rcs xclip
+ 1180  sudo pacman -S xsel
+ 1181  vi .zshrc
+ 1182  sudo pacman -Rcs xsel
+ 1183  sudo pacman -S xclip
+ 1184  vi .zshrc
+ 1185  sudo pacman -Rcs xclip
+ 1186  vi .zshrc
+ 1187  sudo pacman -S xclip
+ 1188  vi .zshrc
+ 1189  sudo pacman -Rcs xclip
+ 1190  sudo pacman -S xsel
+ 1191  vi .zshrc
+ 1192  sudo reboot
+ 1193  vi .zshrc
+ 1194  sudo poweroff
+ 1195  cd /usr/local/bin
+ 1196  ls
+ 1197  vi dwm-session.sh
+ 1198  sudo vi dwm-session.sh
+ 1199  sudo nvim dwm-session.sh
+ 1200  sudo reboot
+ 1201  xinput list-props 12
+ 1202  cd /usr/local/bin
+ 1203  sudo nvim dwm-session.sh
+ 1204  sudo reboot
+ 1205  nvidia-settings
+ 1206  cd .config
+ 1207  cd ..
+ 1208  ls -l
+ 1209  ls -a
+ 1210  cd .config
+ 1211  mkdir nvim
+ 1212  cd nvim
+ 1213  touch init.vim
+ 1214  vi init.vim
+ 1215  cd ~
+ 1216  vi .zshrc
+ 1217  cd .config/nvim
+ 1218  ls
+ 1219  vi init.vim
+ 1220  cd ~
+ 1221  vi init.vim
+ 1222  vi .zshrc
+ 1223  ls
+ 1224  vi volToH
+ 1225  vi volToHeadphone.sh
+ 1226  vi volToSpeaker.sh
+ 1227  vi volUp.sh
+ 1228  cd /usr/local/bin
+ 1229  ls
+ 1230  vi dwm-session.sh
+ 1231  cd /etc/lightdm/
+ 1232  ls
+ 1233  vim lightdm.conf
+ 1234  ls
+ 1235  sudo visudo
+ 1236  paru
+ 1237  sudo loginctl suspend
+ 1238  sudo reboot
+ 1239  paru soundux
+ 1240  clear
+ 1241  sudo poweroff
+ 1242  paru
+ 1243  sudo poweriff
+ 1244  sudo poweroff
+ 1245  sudo crontab -e
+ 1246  vi volDown.sh
+ 1247  vi cronTime.sh
+ 1248  vi .config/nvim/init.vim
+ 1249  vi cronTime.sh
+ 1250  paru
+ 1251  paru brave
+ 1252  paru brave-browser
+ 1253  btop
+ 1254  paru mpv
+ 1255  paru mpv | more
+ 1256  paru mpv
+ 1257  paru smplayer
+ 1258  neofetch
+ 1259  vlist
+ 1260  sudo poweroff
+ 1261  paru
+ 1262  pacman -Rcs firefox
+ 1263  sudo pacman -Rcs firefox
+ 1264  paru librewolf
+ 1265  pacman -Rcs librewolf
+ 1266  sudo pacman -Rcs librewolf
+ 1267  sudo pacman -Rcns librewolf
+ 1268  sudo pacman -R $(pacman -Qdtq)
+ 1269  paru
+ 1270  paru librewolf
+ 1271  sudo poweroff
+ 1272  paru
+ 1273  paru cawbird
+ 1274  paru smplayer
+ 1275  sudo pcmanfs
+ 1276  paru pcmanfs
+ 1277  paru pcman
+ 1278  paru gnome-disk
+ 1279  sudo gnome-disks
+ 1280  sudo pacman -Rcs gnome-disk-utility
+ 1281  lsblk
+ 1282  mkdir disk
+ 1283  ls
+ 1284  sudo mount -t ext4 /dev/sdc disk
+ 1285  sudo mount -t ntfs /dev/sdc disk
+ 1286  sudo mkdir /mnt/ntfs1
+ 1287  sudo mount -t ntfs /dev/sdc /mnt/ntfs1
+ 1288  pacman -S ntfs-3g
+ 1289  sudo pacman -S ntfs-3g
+ 1290  sudo mount -t ntfs /dev/sdc /mnt/ntfs1
+ 1291  lsblk
+ 1292  sudo mount -t ntfs /dev/sdc1 /mnt/ntfs1
+ 1293  sudo pacman -S dolphin
+ 1294  sudo mount -t ntfs3 /dev/sdc1 /mnt/ntfs1
+ 1295  paru ntfs3
+ 1296  sudo mount -t ntfs3 /dev/sdc1 /mnt/ntfs1
+ 1297  sudo mount -t ntfs /dev/sdc1 /mnt/ntfs1
+ 1298  sudo cat /etc/
+ 1299  sudo cat /etc/udev/rules.d/
+ 1300  sudo ls /etc/udev/rules.d/
+ 1301  sudo cd /etc/udev/rules.d/
+ 1302  sudo cd /etc/udev/
+ 1303  sudo cd etc/udev/rules.d/
+ 1304  sudo cd /etc
+ 1305  cd /etc
+ 1306  cd udev
+ 1307  cd rules.d
+ 1308  sudo nvim ntfs3_by_default.rules
+ 1309  sudo mount -t ntfs3 /dev/sdc1 /mnt/ntfs1
+ 1310  sudo mount -t ntfs /dev/sdc1 /mnt/ntfs1
+ 1311  sudo pacman -Rcs ntfs-3g
+ 1312  sudo pacman -Rcs ntfsprogs-ntfs3
+ 1313  sudo mount -t ntfs /dev/sdc1 /mnt/ntfs1
+ 1314  sudo mount -t ntfs3 /dev/sdc1 /mnt/ntfs1
+ 1315  ls
+ 1316  cat ntfs3_by_default.rules
+ 1317  sudo reboot
+ 1318  lsblk
+ 1319  sudo mount -t ntfs3 /dev/sdc1 /mnt/ntfs1
+ 1320  sudo unmount /mnt/ntfs1
+ 1321  sudo umount /mnt/ntfs1
+ 1322  sudo poweroff
+ 1323  paru
+ 1324  cd etc.
+ 1325  cd etc/
+ 1326  cd /etc
+ 1327  cd fonts
+ 1328  ls
+ 1329  cat fonts.conf
+ 1330  cd ~
+ 1331  cd .config
+ 1332  ls
+ 1333  sudo poweroff
+ 1334  paru noto-fonts
+ 1335  paru noto-fonts-cjk
+ 1336  grep mount history
+ 1337  grep history mount
+ 1338  history | grep mount
+ 1339  sudo mount -t ntfs3 /dev/sdc1 /mnt/ntfs1
+ 1340  sudo loginctl suspend
+ 1341  paru keepassxc
+ 1342  sudo poweroff
+ 1343  paru
+ 1344  sudo mount -t ntfs3 /dev/sdc1 /mnt/ntfs1
+ 1345  history grep | mount
+ 1346  history | grep mount
+ 1347  sudo mount -t ntfs3 /dev/sdc1 /mnt/ntfs1
+ 1348  sudo poweroff
+ 1349  sudo mount -t ntfs3 /dev/sdc1 /mnt/ntfs1
+ 1350  paru
+ 1351  history | grep mount
+ 1352  sudo umount /mnt/ntfs1
+ 1353  sudo poweroff
+ 1354  paru
+ 1355  sudo mount -t ntfs3 /dev/sdc1 /mnt/ntfs1
+ 1356  paru
+ 1357  sudo systemctl suspend
+ 1358  sudo loginctl suspend
+ 1359  btop
+ 1360  paru
+ 1361  sudo systemctl suspend
+ 1362  sudo loginctl suspend
+ 1363  sudo umount /mnt/ntfs1
+ 1364  sudo poweroff
+ 1365  sudo mount -t ntfs3 /dev/sdc1 /mnt/ntfs1
+ 1366  sudo loginctl suspend
+ 1367  sudo poweroff
