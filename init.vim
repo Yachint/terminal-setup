@@ -147,6 +147,7 @@ vim.cmd[[hi TSKeyword guifg=#fcba03 ctermfg=DarkMagenta]]
 vim.cmd[[hi TSMethod guifg=#fcba03 ctermfg=Yellow]]
 vim.cmd[[hi TSProperty guifg=#fcba03 ctermfg=Blue]]
 vim.cmd[[hi TSConstructor guifg=#fcba03 ctermfg=Green]]
+vim.cmd[[hi TSOperator guifg=#fcba03 ctermfg=208]]
 EOF
 
 " COC Config from here onwards...
