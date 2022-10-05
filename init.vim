@@ -1,3 +1,5 @@
+" Mac specific!
+" set rtp+=/opt/homebrew/opt/fzf
 set number
 " nnoremap zz :update<cr> :edit<cr> :echo '"'.@%.'"'.'- Written '.getfsize(expand(@%)).'B (*).'<cr>
 nnoremap zz :update<cr>
@@ -19,12 +21,13 @@ nnoremap <tab><tab> <c-w><c-w>
 " ----------------------------------------------------------------
 
 " Coc-Suggestions color scheme change ----------------------------
-""" Customize colors
+""" Customize colors -> get color list using ':hi'
 func! s:my_colors_setup() abort
     " this is an example
     hi Pmenu guibg='Blue' ctermfg='White' ctermbg=17 gui=NONE
     hi CocMenuSel guibg='Blue' ctermbg='Brown' gui=NONE
     hi CocSearch ctermfg=220
+	hi Comment ctermfg=190
 endfunc
 
 augroup colorscheme_coc_setup | au!
@@ -142,7 +145,7 @@ vim.cmd[[hi TSVariable guifg=#fcba03 ctermfg=LightBlue]]
 vim.cmd[[hi TSFunction guifg=#fcba03 ctermfg=LightCyan]]
 vim.cmd[[hi TSKeyword guifg=#fcba03 ctermfg=DarkMagenta]]
 vim.cmd[[hi TSMethod guifg=#fcba03 ctermfg=Yellow]]
-vim.cmd[[hi TSProperty guifg=#fcba03 ctermfg=LightRed]]
+vim.cmd[[hi TSProperty guifg=#fcba03 ctermfg=Blue]]
 vim.cmd[[hi TSConstructor guifg=#fcba03 ctermfg=Green]]
 EOF
 
@@ -327,4 +330,4 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
-" Latest 22 Sept 2022
+" Latest 6 Oct 2022
