@@ -3,6 +3,26 @@ Some tips on setting up certain features from a Clean/Base install. Instructions
 
 OpenRC cheatsheet for Systemd commnads: https://wiki.gentoo.org/wiki/OpenRC_to_systemd_Cheatsheet
 
+## Lock screen implementation
+Traditionally, when we install a desktop environment, we assume that the login screen and lock screen are one and the same. But this is only the case in instances where the full desktop environment is involved.
+
+For example, if we use a window manger like DWM and specially a terminal based display/session manager like 'Ly', then that kind of synergy will not be possible, i.e once we suspend or lock the screen, we will go back to the login screen since to do that, the current X-server would have to be shut down along with DWM to again launch the login manager (kind of like Sign-out on Windows/Mac)
+
+### Solution?
+We build our own Lock screen! Sounds cumbersome but it is not. We can build it with the help of many packages that can be used together.
+
+Packages required:
+- xss-lock - for auto detecting that system enetered suspend/sleep state
+- i3lock-color - for creating the lockscreen and locking the Window manager
+- imagemagick - for constructing the lockscreen image
+- scrot - for taking screenshot required for blurred lockscreen image creation
+- xautolock (optional) - if you want to auto-sleep + lock after certain time
+- xidlehook (optional) - if you want to lock after certain idle time
+
+```
+paru -S xss-lock i3lock-color imagemagick scrot
+```
+
 ## Mount NTFS drives on kernel 5.16 and upwards (NT006)
 After 5.16 (not exactly sure when this change happened...), we have to manually add udev rule to allow us to mount the ntfs file systems to fix the error shown below:
 
