@@ -3,7 +3,21 @@ Some tips on setting up certain features from a Clean/Base install. Instructions
 
 OpenRC cheatsheet for Systemd commnads: https://wiki.gentoo.org/wiki/OpenRC_to_systemd_Cheatsheet
 
-## Lock screen implementation
+## Make scripts executable from anywhere! (ZS001)
+Usually when we create small scripts we need to go to their direct location to execute them and this can be cumbersome if the file is deeply nested.
+
+One solution to this is to designate a folder on your drive where you can point your shell to check for the program/ script directly without providing the full path. This is done through what is called a '.zprofile' file which is placed in the home folder.
+
+This file is always read at login and is used for commands and variables which should be set once or which don't need to be updated frequently.
+
+Example:
+```
+PATH="$PATH:/$HOME/.local/bin"
+```
+This will be always read at login and make sure that whatever programs/ scripts are located in '.local/bin/' are gloabally available.
+
+
+## Lock screen implementation 
 Traditionally, when we install a desktop environment, we assume that the login screen and lock screen are one and the same. But this is only the case in instances where the full desktop environment is involved.
 
 For example, if we use a window manger like DWM and specially a terminal based display/session manager like 'Ly', then that kind of synergy will not be possible, i.e once we suspend or lock the screen, we will go back to the login screen since to do that, the current X-server would have to be shut down along with DWM to again launch the login manager (kind of like Sign-out on Windows/Mac)
@@ -21,6 +35,30 @@ Packages required:
 
 ```
 paru -S xss-lock i3lock-color imagemagick scrot
+```
+
+NOTE: We will put the scripts mentioned below in the '.local/bin/' folder for global access. See **ZS001** for more info.
+
+***Lock Script***
+This script focuses on locking the screen, much like 'Win key + L' in Windows. 
+
+```
+#!/bin/bash
+
+# Delete previous screenshot
+rm /tmp/screenshot.png  
+
+# Take new screenshot
+scrot /tmp/screenshot.png
+
+# Add blur to it using imagemagick
+convert /tmp/screenshot.png -blur 0x20 /tmp/screenshotblur.png
+
+# Add Arch linux banner on top of the blur for final lock-screen picture
+convert /tmp/screenshotblur.png /home/yachint/.local/bin/banner.png -gravity center -composite -matte /tmp/screenlock.png
+
+# Use the image with i3lock to immediately lock the screen
+i3lock -i /tmp/screenlock.png
 ```
 
 ## Mount NTFS drives on kernel 5.16 and upwards (NT006)
