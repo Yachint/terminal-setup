@@ -61,6 +61,40 @@ convert /tmp/screenshotblur.png /home/yachint/.local/bin/banner.png -gravity cen
 i3lock -i /tmp/screenlock.png
 ```
 
+We can manually run this script by just entering 'lock' in the terminal (since it is located in .local/bin for global access) or we can run a custom service that will always run this script when the computer enters sleep/hibernate.
+
+### **--->THIS SECTION IS SYSTEMD SPECIFIC!<---**
+
+First, create the 'locker.service' file here:
+```
+cd /etc/systemd/system
+sudo nvim locker.service
+```
+And write these contents to the file:
+```
+#/etc/systemd/system/lock_screen@.service
+[Unit]
+Description=Activate lock screen when leaving active state
+Before=suspend.target
+Before=sleep.target
+Before=hibernate.target
+Before=suspend-then-hibernate.target
+
+[Service]
+User=yachint
+Type=forking
+Environment=DISPLAY=:0
+ExecStart=/home/yachint/.local/bin/lock
+ExecStartPost=/usr/bin/sleep 2
+
+[Install]
+WantedBy=suspend.target
+WantedBy=sleep.target
+WantedBy=hibernate.target
+WantedBy=suspend-then-hibernate.target
+
+```
+
 ## Mount NTFS drives on kernel 5.16 and upwards (NT006)
 After 5.16 (not exactly sure when this change happened...), we have to manually add udev rule to allow us to mount the ntfs file systems to fix the error shown below:
 
