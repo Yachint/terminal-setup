@@ -27,7 +27,7 @@ func! s:my_colors_setup() abort
     hi Pmenu guibg='Blue' ctermfg='White' ctermbg=17 gui=NONE
     hi CocMenuSel guibg='Blue' ctermbg='Brown' gui=NONE
     hi CocSearch ctermfg=220
-	hi Comment ctermfg=190
+	hi Comment ctermfg=218
 endfunc
 
 augroup colorscheme_coc_setup | au!
