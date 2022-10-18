@@ -54,7 +54,8 @@ set guicursor+=i:blinkon1
 " FZF Bindings
 nnoremap <silent> <C-p> :FZF -m<CR>
 
-inoremap ll <Right>
+" inoremap ll <Right>
+inoremap LL <Right>
 
 inoremap <expr> )  strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
 
@@ -141,13 +142,18 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 
-vim.cmd[[hi TSVariable guifg=#fcba03 ctermfg=LightBlue]]
-vim.cmd[[hi TSFunction guifg=#fcba03 ctermfg=LightCyan]]
-vim.cmd[[hi TSKeyword guifg=#fcba03 ctermfg=DarkMagenta]]
-vim.cmd[[hi TSMethod guifg=#fcba03 ctermfg=Yellow]]
-vim.cmd[[hi TSProperty guifg=#fcba03 ctermfg=Blue]]
-vim.cmd[[hi TSConstructor guifg=#fcba03 ctermfg=Green]]
-vim.cmd[[hi TSOperator guifg=#fcba03 ctermfg=208]]
+vim.cmd[[hi @variable guifg=#fcba03 ctermfg=225]]
+vim.cmd[[hi Function guifg=#fcba03 ctermfg=226]]
+vim.cmd[[hi Keyword guifg=#fcba03 ctermfg=001]]
+-- DEP: (method now same as func) vim.cmd[[hi Method guifg=#fcba03 ctermfg=226]]
+vim.cmd[[hi Identifier guifg=#fcba03 ctermfg=Blue]]
+vim.cmd[[hi Special guifg=#fcba03 ctermfg=Green]]
+vim.cmd[[hi Operator guifg=#fcba03 ctermfg=208]]
+vim.cmd[[hi FuncBuiltIn guifg=#fcba03 ctermfg=178]]
+vim.cmd[[hi Literal guifg=#fcba03 ctermfg=060]]
+vim.cmd[[hi @type guifg=#fcba03 ctermfg=214]]
+vim.cmd[[hi @type.builtin guifg=#fcba03 ctermfg=188]]
+-- vim.cmd[[hi TSParameter guifg=#fcba03 ctermfg=Blue]]
 EOF
 
 " COC Config from here onwards...
@@ -331,4 +337,4 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
-" Latest 6 Oct 2022
+" Latest 18 Oct 2022
