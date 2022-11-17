@@ -3,6 +3,13 @@ Some tips on setting up certain features from a Clean/Base install. Instructions
 
 OpenRC cheatsheet for Systemd commnads: https://wiki.gentoo.org/wiki/OpenRC_to_systemd_Cheatsheet
 
+## Fix SSH terminal backspace/ text issue with ZSH
+Sometimes when using ZSH + SSH on remote systems, the backspace and other keys are not interpretted properly resulting to a mangled mess. To fix this, just add this line to the .zshrc:
+
+```
+export TERM=xterm-256color
+```
+
 ## Make scripts executable from anywhere! (ZS001)
 Usually when we create small scripts we need to go to their direct location to execute them and this can be cumbersome if the file is deeply nested.
 
