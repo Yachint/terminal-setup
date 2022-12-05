@@ -1,6 +1,8 @@
 " Mac specific!
-" set rtp+=/opt/homebrew/opt/fzf
+set rtp+=/opt/homebrew/opt/fzf
 set number
+nnoremap JJ ]m
+nnoremap KK [m
 " nnoremap zz :update<cr> :edit<cr> :echo '"'.@%.'"'.'- Written '.getfsize(expand(@%)).'B (*).'<cr>
 nnoremap zz :update<cr>
 nnoremap <C-a> ggVG
@@ -78,7 +80,7 @@ set autoindent
 let g:clang_library_path='/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
 
 set autochdir
-colorscheme slate
+colorscheme default
 
 " Font Specific!!
 set guifont=Comic\ Code\ Ligatures:h17
@@ -100,7 +102,11 @@ tmap <C-\> <Plug>(Multiterm)
 " If you want to toggle in insert mode and visual mode
 imap <C-\> <Plug>(Multiterm)
 xmap <C-\> <Plug>(Multiterm)
-" --------------------------------------------------------------
+if !exists('g:multiterm_opts')
+    let g:multiterm_opts = {'term_hl': 'Comment'}
+endif
+
+ " --------------------------------------------------------------
 
 " set encoding=UTF-8
 
@@ -120,6 +126,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'xolox/vim-session'
 Plug 'xolox/vim-misc'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'voldikss/vim-floaterm'
 if exists(':terminal')
     if has('nvim-0.4.0') || has('patch-8.2.191')
         Plug 'chengzeyi/multiterm.vim'
@@ -338,4 +345,4 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
-" Latest 19 Oct 2022
+" Latest 6 Dec 2022
