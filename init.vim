@@ -30,6 +30,7 @@ func! s:my_colors_setup() abort
     hi CocMenuSel guibg='Blue' ctermbg='Brown' gui=NONE
     hi CocSearch ctermfg=220
 	hi Comment ctermfg=216
+	hi Terminal ctermfg='White'
 endfunc
 
 augroup colorscheme_coc_setup | au!
@@ -103,7 +104,7 @@ tmap <C-\> <Plug>(Multiterm)
 imap <C-\> <Plug>(Multiterm)
 xmap <C-\> <Plug>(Multiterm)
 if !exists('g:multiterm_opts')
-    let g:multiterm_opts = {'term_hl': 'Comment'}
+    let g:multiterm_opts = {'term_hl': 'Terminal'}
 endif
 
  " --------------------------------------------------------------
@@ -127,6 +128,7 @@ Plug 'xolox/vim-session'
 Plug 'xolox/vim-misc'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'voldikss/vim-floaterm'
+Plug 'tpope/vim-fugitive'
 if exists(':terminal')
     if has('nvim-0.4.0') || has('patch-8.2.191')
         Plug 'chengzeyi/multiterm.vim'
@@ -345,4 +347,4 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
-" Latest 6 Dec 2022
+" Latest 21 May 2023
